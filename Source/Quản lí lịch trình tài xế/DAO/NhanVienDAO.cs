@@ -1,0 +1,176 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using DTO;
+using System.Data.SqlClient;
+using System.Data;
+
+namespace DAO
+{
+    public class NhanVienDAO
+    {
+        public static bool DangNhap (NhanVienDTO NV)
+        {
+            bool KQ = new bool();
+            SqlConnection con = DataProvider.Connection();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("sp_DangNhap",con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@Username",SqlDbType.NVarChar);
+                cmd.Parameters.Add("@Password", SqlDbType.VarChar);
+                cmd.Parameters.Add("@Trave", SqlDbType.Int);
+                cmd.Parameters["@Trave"].Direction = ParameterDirection.Output;
+
+                cmd.Parameters["@Username"].Value = NV.Username;
+                cmd.Parameters["@Password"].Value = NV.Password;
+                cmd.ExecuteNonQuery();
+                string Trave = cmd.Parameters["@Trave"].Value.ToString();
+                if (Trave == "0")
+                    KQ = false;
+                else if (Trave == "1")
+                    KQ = true;
+
+            }
+            catch
+            {
+                KQ = false;
+            }
+            finally
+            {
+                con = DataProvider.Disconnection();
+            }
+            return KQ;
+        }
+
+        public static string LayPQ(string Username)
+        {
+            string TenPQ = "";
+            SqlConnection con = DataProvider.Connection();
+            string sql = @"Select P.TenPQ From NhanVien N join PhanQuyen P on N.MaPQ=P.MaPQ Where N.Username ='" + Username + "'";
+            SqlCommand cmd = new SqlCommand(sql, con);
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            foreach (DataRow row in dt.Rows)
+            {
+                TenPQ = row["TenPQ"].ToString();
+            }
+            con = DataProvider.Disconnection();
+            return TenPQ;
+        }
+
+        public static string LayTenND(string Username)
+        {
+            string TenND = "";
+            SqlConnection con = DataProvider.Connection();
+            string sql = @"Select HoTen From NhanVien Where Username ='" + Username + "'";
+            SqlCommand cmd = new SqlCommand(sql, con);
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            foreach (DataRow row in dt.Rows)
+            {
+                TenND = row["HoTen"].ToString();
+            }
+            con = DataProvider.Disconnection();
+            return TenND;
+        }
+
+        public static NhanVienDTO LoadThongTinTaiXe(string Username)
+        {
+            NhanVienDTO NV = new NhanVienDTO();
+            SqlConnection con = DataProvider.Connection();
+            string sql = @"Select * From NhanVien Where Username ='" + Username + "'";
+            SqlCommand cmd = new SqlCommand(sql, con);
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            foreach (DataRow row in dt.Rows)
+            {
+                NV.MaNV = row["MaNV"].ToString();
+                NV.HoTen = row["HoTen"].ToString();
+                NV.DiaChi = row["DiaChi"].ToString();
+                NV.CMND = row["CMND"].ToString();
+                NV.DienThoai = row["DienThoai"].ToString();
+                NV.KhaNangLai = Int32.Parse(row["KhaNangLai"].ToString());
+                NV.Username = row["Username"].ToString();
+                NV.Password = row["Password"].ToString();
+                NV.MaTo = Int32.Parse(row["MaTo"].ToString());
+            }
+            con = DataProvider.Disconnection();
+            return NV;
+        }
+
+        public static bool CapNhatThongTin(NhanVienDTO NV)
+        {
+            try
+            {
+                SqlConnection con = DataProvider.Connection();
+                SqlCommand cmd = new SqlCommand("sp_CapNhatthongTin", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@MaNV", SqlDbType.VarChar);
+                cmd.Parameters.Add("@Hoten", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@Diachi", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@CMND", SqlDbType.VarChar);
+                cmd.Parameters.Add("@Dienthoai", SqlDbType.VarChar);
+                cmd.Parameters.Add("@Khananglai", SqlDbType.Int);
+
+                cmd.Parameters["@MaNV"].Value = NV.MaNV;
+                cmd.Parameters["@Hoten"].Value = NV.HoTen;
+                cmd.Parameters["@Diachi"].Value = NV.DiaChi;
+                cmd.Parameters["@CMND"].Value = NV.CMND;
+                cmd.Parameters["@Dienthoai"].Value = NV.DienThoai;
+                cmd.Parameters["@Khananglai"].Value = NV.KhaNangLai;
+                cmd.ExecuteNonQuery();
+                con.Close();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public static string LayMatKhau(string Username)
+        {
+            string MatKhau = "";
+            SqlConnection con = DataProvider.Connection();
+            string sql = @"Select Password From NhanVien Where Username ='" + Username + "'";
+            SqlCommand cmd = new SqlCommand(sql, con);
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            foreach (DataRow row in dt.Rows)
+            {
+                MatKhau = row["Password"].ToString();
+            }
+            con = DataProvider.Disconnection();
+            return MatKhau;
+        }
+
+        public static bool DoiMatKhau(NhanVienDTO NV)
+        {
+            try
+            {
+                SqlConnection con = DataProvider.Connection();
+                SqlCommand cmd = new SqlCommand("sp_DoiMatKhau", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@MaNV", SqlDbType.VarChar);
+                cmd.Parameters.Add("@Password", SqlDbType.VarChar);
+
+                cmd.Parameters["@MaNV"].Value = NV.MaNV;
+                cmd.Parameters["@Password"].Value = NV.Password;
+                cmd.ExecuteNonQuery();
+                con.Close();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+    }
+}
