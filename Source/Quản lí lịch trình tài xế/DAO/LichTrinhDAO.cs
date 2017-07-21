@@ -23,5 +23,18 @@ namespace DAO
             con = DataProvider.Disconnection();
             return dt;
         }
+
+        public static DataTable LoadLichTrinhTo(int MaTo)
+        {
+            SqlConnection con = DataProvider.Connection();
+            DataTable dt = new DataTable();
+            string sql = @"Select L.MaLich,L.Thang,N.MaNV,L.GioDi,L.GioDen,L.NoiDi,L.NoiDen,C.MaChuyen,T.MaTuyen,T.KhoangCach " +
+                          "From (((NhanVien N join LichTrinh L on N.MaNV=L.MaNV) join ChuyenXe C on L.MaChuyen=C.MaChuyen) join TuyenDuong T on C.MaTuyen=T.MaTuyen) join Nhom G on N.MaTo=G.MaTo " +
+                          "Where G.MaTo = '" + MaTo.ToString() + "'";
+            SqlDataAdapter da = new SqlDataAdapter(sql, con);
+            da.Fill(dt);
+            con = DataProvider.Disconnection();
+            return dt;
+        }
     }
 }

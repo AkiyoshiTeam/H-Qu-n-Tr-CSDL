@@ -45,5 +45,10 @@ namespace BUS
         {
             return NhanVienDAO.DoiMatKhau(NV);
         }
+
+        public static DataTable LoadNV()
+        {
+            return NhanVienDAO.LoadNV(); 
+        }
     }
 }

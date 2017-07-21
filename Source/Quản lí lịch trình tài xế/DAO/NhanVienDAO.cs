@@ -11,15 +11,15 @@ namespace DAO
 {
     public class NhanVienDAO
     {
-        public static bool DangNhap (NhanVienDTO NV)
+        public static bool DangNhap(NhanVienDTO NV)
         {
             bool KQ = new bool();
             SqlConnection con = DataProvider.Connection();
             try
             {
-                SqlCommand cmd = new SqlCommand("sp_DangNhap",con);
+                SqlCommand cmd = new SqlCommand("sp_DangNhap", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@Username",SqlDbType.NVarChar);
+                cmd.Parameters.Add("@Username", SqlDbType.NVarChar);
                 cmd.Parameters.Add("@Password", SqlDbType.VarChar);
                 cmd.Parameters.Add("@Trave", SqlDbType.Int);
                 cmd.Parameters["@Trave"].Direction = ParameterDirection.Output;
@@ -171,6 +171,18 @@ namespace DAO
             {
                 return false;
             }
+        }
+
+        public static DataTable LoadNV()
+        {
+            SqlConnection con = DataProvider.Connection();
+            string sql = @"Select MaNV,HoTen From NhanVien";
+            SqlCommand cmd = new SqlCommand(sql, con);
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            con = DataProvider.Disconnection();
+            return dt;
         }
     }
 }

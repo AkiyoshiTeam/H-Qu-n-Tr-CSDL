@@ -73,7 +73,7 @@ namespace Quản_lí_lịch_trình_tài_xế
             dgvCol.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             dgvCol.DataPropertyName = "GioDi";
             dgvCol.ReadOnly = true;
-            dgvCol.Width = 152;
+            dgvCol.Width = 156;
             dgvLichTrinh.Columns.Add(dgvCol);
 
             dgvCol = new DataGridViewTextBoxColumn();
@@ -81,7 +81,7 @@ namespace Quản_lí_lịch_trình_tài_xế
             dgvCol.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             dgvCol.DataPropertyName = "GioDen";
             dgvCol.ReadOnly = true;
-            dgvCol.Width = 152;
+            dgvCol.Width = 156;
             dgvLichTrinh.Columns.Add(dgvCol);
 
             dgvCol = new DataGridViewTextBoxColumn();
@@ -180,6 +180,14 @@ namespace Quản_lí_lịch_trình_tài_xế
         private void btnChange_Click(object sender, EventArgs e)
         {
             frmThayDoiPass frm = new frmThayDoiPass(Username, txtMaNV.Text);
+            frm.ShowDialog();
+            LoadThongTin();
+            btnUpdate.Enabled = false;
+        }
+
+        private void btnLichTrinh_Click(object sender, EventArgs e)
+        {
+            frmLichTrinhTo frm = new frmLichTrinhTo(Int32.Parse(txtTo.Text));
             frm.ShowDialog();
             LoadThongTin();
             btnUpdate.Enabled = false;

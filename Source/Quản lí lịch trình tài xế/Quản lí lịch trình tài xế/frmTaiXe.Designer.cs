@@ -62,6 +62,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvLichTrinh = new System.Windows.Forms.DataGridView();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.sttThongTin.SuspendLayout();
@@ -101,7 +103,9 @@
             this.toolStrip1.BackColor = System.Drawing.SystemColors.Control;
             this.toolStrip1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnLichTrinh});
+            this.btnLichTrinh,
+            this.toolStripSeparator2,
+            this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 27);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(978, 68);
@@ -115,9 +119,10 @@
             this.btnLichTrinh.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnLichTrinh.Name = "btnLichTrinh";
             this.btnLichTrinh.RightToLeftAutoMirrorImage = true;
-            this.btnLichTrinh.Size = new System.Drawing.Size(69, 65);
-            this.btnLichTrinh.Text = "Lịch trình";
+            this.btnLichTrinh.Size = new System.Drawing.Size(120, 65);
+            this.btnLichTrinh.Text = "Lịch trình trong tổ";
             this.btnLichTrinh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnLichTrinh.Click += new System.EventHandler(this.btnLichTrinh_Click);
             // 
             // sttThongTin
             // 
@@ -394,6 +399,21 @@
             this.dgvLichTrinh.Size = new System.Drawing.Size(930, 249);
             this.dgvLichTrinh.TabIndex = 0;
             // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 68);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(101, 65);
+            this.toolStripButton1.Text = "Tài xế trong tổ";
+            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
             // frmTaiXe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -462,5 +482,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgvLichTrinh;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }

@@ -15,5 +15,10 @@ namespace BUS
         {
             return LichTrinhDAO.LoadLichTrinhCaNhan(MaNV);
         }
+
+        public static DataTable LoadLichTrinhTo(int MaTo)
+        {
+            return LichTrinhDAO.LoadLichTrinhTo(MaTo);
+        }
     }
 }
