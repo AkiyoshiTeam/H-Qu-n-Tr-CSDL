@@ -46,5 +46,19 @@ as
 	where MaNV = @MaNV
  end
 go 
+-- Thêm Lịch trình --
+Create proc sp_ThemLichTrinh
+ @Thang int,
+ @MaNV varchar(10),
+ @GioDi datetime,
+ @GioDen datetime,
+ @NoiDi nvarchar(100),
+ @NoiDen nvarchar(100),
+ @MaChuyen varchar(10)
+as
+ begin
+    Insert into LichTrinh(Thang,MaNV,GioDi,GioDen,NoiDi,NoiDen,MaChuyen)
+	Values (@Thang,@MaNV,@GioDi,@GioDen,@NoiDi,@NoiDen,@MaChuyen)
+ end
+go
 --
-

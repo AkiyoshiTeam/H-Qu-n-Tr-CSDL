@@ -176,7 +176,31 @@ namespace DAO
         public static DataTable LoadNV()
         {
             SqlConnection con = DataProvider.Connection();
-            string sql = @"Select MaNV,HoTen From NhanVien";
+            string sql = @"Select * From NhanVien";
+            SqlCommand cmd = new SqlCommand(sql, con);
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            con = DataProvider.Disconnection();
+            return dt;
+        }
+
+        public static DataTable LoadNVTrongTo(int MaTo)
+        {
+            SqlConnection con = DataProvider.Connection();
+            string sql = @"Select * From NhanVien Where MaTo='" + MaTo.ToString() + "'";
+            SqlCommand cmd = new SqlCommand(sql, con);
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            con = DataProvider.Disconnection();
+            return dt;
+        }
+
+        public static DataTable LoadNVTrongToTheoKhaNang(int MaTo,long KhoangCach)
+        {
+            SqlConnection con = DataProvider.Connection();
+            string sql = @"Select * From NhanVien Where MaTo='" + MaTo.ToString() + "' and KhaNangLai >= " + KhoangCach;
             SqlCommand cmd = new SqlCommand(sql, con);
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);

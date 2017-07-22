@@ -21,5 +21,16 @@ namespace DAO
             con = DataProvider.Disconnection();
             return dt;
         }
+
+        public static DataTable LoadChuyenXeTheoTuyenDuong(string MaTuyen)
+        {
+            SqlConnection con = DataProvider.Connection();
+            DataTable dt = new DataTable();
+            string sql = @"Select * From ChuyenXe C join TuyenDuong T on C.MaTuyen=T.MaTuyen Where T.MaTuyen='" + MaTuyen + "'";
+            SqlDataAdapter da = new SqlDataAdapter(sql, con);
+            da.Fill(dt);
+            con = DataProvider.Disconnection();
+            return dt;
+        }
     }
 }

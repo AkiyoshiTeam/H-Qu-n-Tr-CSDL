@@ -15,5 +15,10 @@ namespace BUS
         {
             return ChuyenXeDAO.LoadChuyenXe();
         }
+
+        public static DataTable LoadChuyenXeTheoTuyenDuong(string MaTuyen)
+        {
+            return ChuyenXeDAO.LoadChuyenXeTheoTuyenDuong(MaTuyen);
+        }
     }
 }

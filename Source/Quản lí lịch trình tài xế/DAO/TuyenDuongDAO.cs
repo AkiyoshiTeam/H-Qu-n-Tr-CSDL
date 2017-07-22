@@ -21,5 +21,21 @@ namespace DAO
             con = DataProvider.Disconnection();
             return dt;
         }
+
+        public static long LayKhoangCach(string MaTuyen)
+        {
+            long KQ = 0;
+            SqlConnection con = DataProvider.Connection();
+            DataTable dt = new DataTable();
+            string sql = @"Select KhoangCach From TuyenDuong Where MaTuyen='" + MaTuyen + "'";
+            SqlDataAdapter da = new SqlDataAdapter(sql, con);
+            da.Fill(dt);
+            foreach (DataRow row in dt.Rows)
+            {
+                KQ = Int64.Parse(row["KhoangCach"].ToString());
+            }
+            con = DataProvider.Disconnection();
+            return KQ;
+        }
     }
 }

@@ -15,5 +15,10 @@ namespace BUS
         {
             return TuyenDuongDAO.LoadTuyenDuong();
         }
+
+        public static long LayKhoangCach(string MaTuyen)
+        {
+            return TuyenDuongDAO.LayKhoangCach(MaTuyen);
+        }
     }
 }

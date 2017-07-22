@@ -15,6 +15,7 @@ namespace Quản_lí_lịch_trình_tài_xế
     public partial class frmLichTrinhTo : Form
     {
         int MaTo;
+        long KhoangCach;
         public frmLichTrinhTo(int mato)
         {
             InitializeComponent();
@@ -25,6 +26,10 @@ namespace Quản_lí_lịch_trình_tài_xế
         private void frmLichTrinhTo_Load(object sender, EventArgs e)
         {
             LoadData();
+            txtMaLich.Text = "Chương trình phát sinh tự động.";
+            cboChuyenXe.Enabled = false;
+            cboMaNV.Enabled = false;
+            btnCapNhat.Enabled = false;
         }
 
         void LoadData()
@@ -40,7 +45,10 @@ namespace Quản_lí_lịch_trình_tài_xế
             cboChuyenXe.DataSource = ChuyenXeBUS.LoadChuyenXe();
             cboChuyenXe.DisplayMember = "HangXe";
             cboChuyenXe.ValueMember = "MaChuyen";
-            cboChuyenXe.Enabled = true;
+
+            cboMaNV.DataSource = NhanVienBUS.LoadNVTrongTo(MaTo);
+            cboMaNV.DisplayMember = "HoTen";
+            cboMaNV.ValueMember = "MaNV";
         }
 
         void Custom()
@@ -140,13 +148,34 @@ namespace Quản_lí_lịch_trình_tài_xế
             dgvLichTrinh.Columns.Add(dgvCol);
         }
 
+        void Reset()
+        {
+            txtMaLich.Text = "Chương trình phát sinh tự động.";
+            txtThang.ResetText();
+            dtkGioDi.Value = DateTime.Now;
+            dtkGioDen.Value = DateTime.Now;
+            txtNoiDi.ResetText();
+            txtNoiDen.ResetText();
+            txtKhoangCach.ResetText();
+            cboMaNV.Enabled = false;
+            cboChuyenXe.Enabled = false;
+            btnThem.Enabled = true;
+            btnCapNhat.Enabled = false;
+            dgvLichTrinh.ClearSelection();
+        }
+
         private void dgvLichTrinh_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            cboChuyenXe.Enabled = true;
+            cboMaNV.Enabled = true;
+            btnCapNhat.Enabled = true;
+            btnThem.Enabled = false;
+
             txtMaLich.Text = dgvLichTrinh.CurrentRow.Cells[0].Value.ToString();
             txtThang.Text = dgvLichTrinh.CurrentRow.Cells[1].Value.ToString();
-            txtMaNV.Text= dgvLichTrinh.CurrentRow.Cells[2].Value.ToString();
-            txtGioDi.Text = dgvLichTrinh.CurrentRow.Cells[3].Value.ToString();
-            txtGioDen.Text = dgvLichTrinh.CurrentRow.Cells[4].Value.ToString();
+            cboMaNV.SelectedValue = dgvLichTrinh.CurrentRow.Cells[2].Value.ToString();
+            dtkGioDi.Value = DateTime.Parse(dgvLichTrinh.CurrentRow.Cells[3].Value.ToString());
+            dtkGioDen.Value = DateTime.Parse(dgvLichTrinh.CurrentRow.Cells[4].Value.ToString());
             txtNoiDi.Text = dgvLichTrinh.CurrentRow.Cells[5].Value.ToString();
             txtNoiDen.Text = dgvLichTrinh.CurrentRow.Cells[6].Value.ToString();
             cboChuyenXe.SelectedValue = dgvLichTrinh.CurrentRow.Cells[7].Value.ToString();
@@ -156,11 +185,16 @@ namespace Quản_lí_lịch_trình_tài_xế
 
         private void dgvLichTrinh_KeyDown(object sender, KeyEventArgs e)
         {
+            cboChuyenXe.Enabled = true;
+            cboMaNV.Enabled = true;
+            btnCapNhat.Enabled = true;
+            btnThem.Enabled = false;
+
             txtMaLich.Text = dgvLichTrinh.CurrentRow.Cells[0].Value.ToString();
             txtThang.Text = dgvLichTrinh.CurrentRow.Cells[1].Value.ToString();
-            txtMaNV.Text = dgvLichTrinh.CurrentRow.Cells[2].Value.ToString();
-            txtGioDi.Text = dgvLichTrinh.CurrentRow.Cells[3].Value.ToString();
-            txtGioDen.Text = dgvLichTrinh.CurrentRow.Cells[4].Value.ToString();
+            cboMaNV.SelectedValue = dgvLichTrinh.CurrentRow.Cells[2].Value.ToString();
+            dtkGioDi.Value = DateTime.Parse(dgvLichTrinh.CurrentRow.Cells[3].Value.ToString());
+            dtkGioDen.Value = DateTime.Parse(dgvLichTrinh.CurrentRow.Cells[4].Value.ToString());
             txtNoiDi.Text = dgvLichTrinh.CurrentRow.Cells[5].Value.ToString();
             txtNoiDen.Text = dgvLichTrinh.CurrentRow.Cells[6].Value.ToString();
             cboChuyenXe.SelectedValue = dgvLichTrinh.CurrentRow.Cells[7].Value.ToString();
@@ -170,16 +204,66 @@ namespace Quản_lí_lịch_trình_tài_xế
 
         private void dgvLichTrinh_KeyUp(object sender, KeyEventArgs e)
         {
+            cboChuyenXe.Enabled = true;
+            cboMaNV.Enabled = true;
+            btnCapNhat.Enabled = true;
+            btnThem.Enabled = false;
+
             txtMaLich.Text = dgvLichTrinh.CurrentRow.Cells[0].Value.ToString();
             txtThang.Text = dgvLichTrinh.CurrentRow.Cells[1].Value.ToString();
-            txtMaNV.Text = dgvLichTrinh.CurrentRow.Cells[2].Value.ToString();
-            txtGioDi.Text = dgvLichTrinh.CurrentRow.Cells[3].Value.ToString();
-            txtGioDen.Text = dgvLichTrinh.CurrentRow.Cells[4].Value.ToString();
+            cboMaNV.SelectedValue = dgvLichTrinh.CurrentRow.Cells[2].Value.ToString();
+            dtkGioDi.Value = DateTime.Parse(dgvLichTrinh.CurrentRow.Cells[3].Value.ToString());
+            dtkGioDen.Value = DateTime.Parse(dgvLichTrinh.CurrentRow.Cells[4].Value.ToString());
             txtNoiDi.Text = dgvLichTrinh.CurrentRow.Cells[5].Value.ToString();
             txtNoiDen.Text = dgvLichTrinh.CurrentRow.Cells[6].Value.ToString();
             cboChuyenXe.SelectedValue = dgvLichTrinh.CurrentRow.Cells[7].Value.ToString();
             cboTuyenDuong.SelectedValue = dgvLichTrinh.CurrentRow.Cells[8].Value.ToString();
             txtKhoangCach.Text = dgvLichTrinh.CurrentRow.Cells[9].Value.ToString();
+        }
+
+        private void cboTuyenDuong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cboChuyenXe.Enabled = true;
+            cboChuyenXe.DataSource = ChuyenXeBUS.LoadChuyenXeTheoTuyenDuong(cboTuyenDuong.SelectedValue.ToString());
+            cboChuyenXe.DisplayMember = "HangXe";
+            cboChuyenXe.ValueMember = "MaChuyen";
+
+            KhoangCach = TuyenDuongBUS.LayKhoangCach(cboTuyenDuong.SelectedValue.ToString());
+            txtKhoangCach.Text = KhoangCach.ToString();
+            cboMaNV.Enabled = true;
+            cboMaNV.DataSource = NhanVienBUS.LoadNVTrongToTheoKhaNang(MaTo, KhoangCach);
+            cboMaNV.DisplayMember = "HoTen";
+            cboMaNV.ValueMember = "MaNV";
+
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            Reset();
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            LichTrinhDTO L = new LichTrinhDTO();
+            L.Thang = int.Parse(txtThang.Text);
+            L.MaNV = cboMaNV.SelectedValue.ToString();
+            L.GioDi = dtkGioDi.Value;
+            L.GioDen = dtkGioDen.Value;
+            L.NoiDi = txtNoiDi.Text;
+            L.NoiDen = txtNoiDen.Text;
+            L.MaChuyen = cboChuyenXe.SelectedValue.ToString();
+            if(LichTrinhBUS.ThemLichTrinh(L)==true)
+            {
+                MessageBox.Show("Thêm lịch trình thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dgvLichTrinh.DataSource = LichTrinhBUS.LoadLichTrinhTo(MaTo);
+                Custom();
+                dgvLichTrinh.ClearSelection();
+                Reset();
+            }
+            else if(LichTrinhBUS.ThemLichTrinh(L) == false)
+            {
+                MessageBox.Show("Thêm lịch trình thất bại.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
