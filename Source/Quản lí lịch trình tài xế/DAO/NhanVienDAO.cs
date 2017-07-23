@@ -208,5 +208,17 @@ namespace DAO
             con = DataProvider.Disconnection();
             return dt;
         }
+
+        public static DataTable LoadToTruong()
+        {
+            SqlConnection con = DataProvider.Connection();
+            string sql = @"Select ToTruong From Nhom";
+            SqlCommand cmd = new SqlCommand(sql, con);
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            con = DataProvider.Disconnection();
+            return dt;
+        }
     }
 }

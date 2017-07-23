@@ -68,5 +68,39 @@ namespace DAO
                 return false;
             }
         }
+
+        public static bool CapNhatLichTrinh(LichTrinhDTO L)
+        {
+            try
+            {
+                SqlConnection con = DataProvider.Connection();
+                SqlCommand cmd = new SqlCommand("sp_CapNhatLichTrinh", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@MaLich", SqlDbType.Int);
+                cmd.Parameters.Add("@Thang", SqlDbType.Int);
+                cmd.Parameters.Add("@MaNV", SqlDbType.VarChar);
+                cmd.Parameters.Add("@GioDi", SqlDbType.DateTime);
+                cmd.Parameters.Add("@GioDen", SqlDbType.DateTime);
+                cmd.Parameters.Add("@NoiDi", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@NoiDen", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@MaChuyen", SqlDbType.VarChar);
+
+                cmd.Parameters["@MaLich"].Value = L.MaLich;
+                cmd.Parameters["@Thang"].Value = L.Thang;
+                cmd.Parameters["@MaNV"].Value = L.MaNV;
+                cmd.Parameters["@GioDi"].Value = L.GioDi;
+                cmd.Parameters["@GioDen"].Value = L.GioDen;
+                cmd.Parameters["@NoiDi"].Value = L.NoiDi;
+                cmd.Parameters["@NoiDen"].Value = L.NoiDen;
+                cmd.Parameters["@MaChuyen"].Value = L.MaChuyen;
+                cmd.ExecuteNonQuery();
+                con.Close();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

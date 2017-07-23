@@ -35,7 +35,7 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnLichTrinh = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.btnTaiXeTrongTo = new System.Windows.Forms.ToolStripButton();
             this.sttThongTin = new System.Windows.Forms.ToolStrip();
             this.lbHoten = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -105,7 +105,7 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnLichTrinh,
             this.toolStripSeparator2,
-            this.toolStripButton1});
+            this.btnTaiXeTrongTo});
             this.toolStrip1.Location = new System.Drawing.Point(0, 27);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1047, 68);
@@ -129,15 +129,16 @@
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 68);
             // 
-            // toolStripButton1
+            // btnTaiXeTrongTo
             // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(101, 65);
-            this.toolStripButton1.Text = "Tài xế trong tổ";
-            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnTaiXeTrongTo.Image = ((System.Drawing.Image)(resources.GetObject("btnTaiXeTrongTo.Image")));
+            this.btnTaiXeTrongTo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnTaiXeTrongTo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnTaiXeTrongTo.Name = "btnTaiXeTrongTo";
+            this.btnTaiXeTrongTo.Size = new System.Drawing.Size(101, 65);
+            this.btnTaiXeTrongTo.Text = "Tài xế trong tổ";
+            this.btnTaiXeTrongTo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnTaiXeTrongTo.Click += new System.EventHandler(this.btnTaiXeTrongTo_Click);
             // 
             // sttThongTin
             // 
@@ -326,14 +327,14 @@
             this.txtPassword.Location = new System.Drawing.Point(627, 108);
             this.txtPassword.MaxLength = 20;
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '•';
+            this.txtPassword.PasswordChar = '●';
             this.txtPassword.ReadOnly = true;
             this.txtPassword.Size = new System.Drawing.Size(295, 26);
             this.txtPassword.TabIndex = 21;
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(718, 181);
+            this.btnUpdate.Location = new System.Drawing.Point(729, 181);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(135, 31);
             this.btnUpdate.TabIndex = 22;
@@ -483,6 +484,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgvLichTrinh;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton btnTaiXeTrongTo;
     }
 }

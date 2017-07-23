@@ -18,3 +18,4 @@ D:\Hệ QTCSDL\Source\Quản lí lịch trình tài xế\Quản lí lịch trìn
 D:\Hệ QTCSDL\Source\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản_lí_lịch_trình_tài_xế.frmTaiXe.resources
 D:\Hệ QTCSDL\Source\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản_lí_lịch_trình_tài_xế.frmThayDoiPass.resources
 D:\Hệ QTCSDL\Source\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản_lí_lịch_trình_tài_xế.frmLichTrinhTo.resources
+D:\Hệ QTCSDL\Source\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản_lí_lịch_trình_tài_xế.frmTaiXeTrongTo.resources

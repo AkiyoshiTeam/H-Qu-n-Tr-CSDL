@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.lbTitle = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtkGioDen = new System.Windows.Forms.DateTimePicker();
+            this.dtkGioDi = new System.Windows.Forms.DateTimePicker();
+            this.cboMaNV = new System.Windows.Forms.ComboBox();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
@@ -55,9 +58,7 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvLichTrinh = new System.Windows.Forms.DataGridView();
-            this.cboMaNV = new System.Windows.Forms.ComboBox();
-            this.dtkGioDi = new System.Windows.Forms.DateTimePicker();
-            this.dtkGioDen = new System.Windows.Forms.DateTimePicker();
+            this.btnThoat = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichTrinh)).BeginInit();
@@ -76,6 +77,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnThoat);
             this.groupBox1.Controls.Add(this.dtkGioDen);
             this.groupBox1.Controls.Add(this.dtkGioDi);
             this.groupBox1.Controls.Add(this.cboMaNV);
@@ -107,9 +109,36 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin lịch trình";
             // 
+            // dtkGioDen
+            // 
+            this.dtkGioDen.CustomFormat = "dd/MM/yyyy HH:mm tt";
+            this.dtkGioDen.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtkGioDen.Location = new System.Drawing.Point(615, 64);
+            this.dtkGioDen.Name = "dtkGioDen";
+            this.dtkGioDen.Size = new System.Drawing.Size(309, 26);
+            this.dtkGioDen.TabIndex = 52;
+            // 
+            // dtkGioDi
+            // 
+            this.dtkGioDi.CustomFormat = "dd/MM/yyyy HH:mm tt";
+            this.dtkGioDi.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtkGioDi.Location = new System.Drawing.Point(615, 29);
+            this.dtkGioDi.Name = "dtkGioDi";
+            this.dtkGioDi.Size = new System.Drawing.Size(309, 26);
+            this.dtkGioDi.TabIndex = 51;
+            // 
+            // cboMaNV
+            // 
+            this.cboMaNV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMaNV.FormattingEnabled = true;
+            this.cboMaNV.Location = new System.Drawing.Point(115, 136);
+            this.cboMaNV.Name = "cboMaNV";
+            this.cboMaNV.Size = new System.Drawing.Size(350, 27);
+            this.cboMaNV.TabIndex = 24;
+            // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(572, 215);
+            this.btnReset.Location = new System.Drawing.Point(487, 215);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(127, 31);
             this.btnReset.TabIndex = 11;
@@ -119,7 +148,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(280, 215);
+            this.btnThem.Location = new System.Drawing.Point(195, 215);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(127, 31);
             this.btnThem.TabIndex = 22;
@@ -194,12 +223,13 @@
             // 
             // btnCapNhat
             // 
-            this.btnCapNhat.Location = new System.Drawing.Point(429, 215);
+            this.btnCapNhat.Location = new System.Drawing.Point(344, 215);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(127, 31);
             this.btnCapNhat.TabIndex = 10;
             this.btnCapNhat.Text = "Cập nhật";
             this.btnCapNhat.UseVisualStyleBackColor = true;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // label1
             // 
@@ -318,32 +348,15 @@
             this.dgvLichTrinh.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvLichTrinh_KeyDown);
             this.dgvLichTrinh.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvLichTrinh_KeyUp);
             // 
-            // cboMaNV
+            // btnThoat
             // 
-            this.cboMaNV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboMaNV.FormattingEnabled = true;
-            this.cboMaNV.Location = new System.Drawing.Point(115, 136);
-            this.cboMaNV.Name = "cboMaNV";
-            this.cboMaNV.Size = new System.Drawing.Size(350, 27);
-            this.cboMaNV.TabIndex = 24;
-            // 
-            // dtkGioDi
-            // 
-            this.dtkGioDi.CustomFormat = "dd/MM/yyyy HH:mm tt";
-            this.dtkGioDi.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtkGioDi.Location = new System.Drawing.Point(615, 29);
-            this.dtkGioDi.Name = "dtkGioDi";
-            this.dtkGioDi.Size = new System.Drawing.Size(309, 26);
-            this.dtkGioDi.TabIndex = 51;
-            // 
-            // dtkGioDen
-            // 
-            this.dtkGioDen.CustomFormat = "dd/MM/yyyy HH:mm tt";
-            this.dtkGioDen.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtkGioDen.Location = new System.Drawing.Point(615, 64);
-            this.dtkGioDen.Name = "dtkGioDen";
-            this.dtkGioDen.Size = new System.Drawing.Size(309, 26);
-            this.dtkGioDen.TabIndex = 52;
+            this.btnThoat.Location = new System.Drawing.Point(630, 215);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(127, 31);
+            this.btnThoat.TabIndex = 53;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // frmLichTrinhTo
             // 
@@ -400,5 +413,6 @@
         private System.Windows.Forms.ComboBox cboMaNV;
         private System.Windows.Forms.DateTimePicker dtkGioDi;
         private System.Windows.Forms.DateTimePicker dtkGioDen;
+        private System.Windows.Forms.Button btnThoat;
     }
 }

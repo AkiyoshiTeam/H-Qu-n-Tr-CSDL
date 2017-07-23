@@ -25,6 +25,11 @@ namespace Quản_lí_lịch_trình_tài_xế
 
         private void frmTaiXe_Load(object sender, EventArgs e)
         {
+            if (KTToTruong() == true)
+                btnLichTrinh.Enabled = true;
+            else if (KTToTruong() == false)
+                btnLichTrinh.Enabled = false;
+
             LoadThongTin();
             btnUpdate.Enabled = false;
         }
@@ -46,6 +51,21 @@ namespace Quản_lí_lịch_trình_tài_xế
             dgvLichTrinh.DataSource = LichTrinhBUS.LoadLichTrinhCaNhan(NV.MaNV);
             Custom();
             dgvLichTrinh.ClearSelection();
+        }
+
+        bool KTToTruong()
+        {
+            NhanVienDTO NV = new NhanVienDTO();
+            NV = NhanVienBUS.LoadThongTinTaiXe(Username);
+            DataTable dt = NhanVienBUS.LoadToTruong();
+            foreach(DataRow row in dt.Rows)
+            {
+                if(NV.MaNV == row["ToTruong"].ToString())
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         void Custom()
@@ -188,6 +208,14 @@ namespace Quản_lí_lịch_trình_tài_xế
         private void btnLichTrinh_Click(object sender, EventArgs e)
         {
             frmLichTrinhTo frm = new frmLichTrinhTo(Int32.Parse(txtTo.Text));
+            frm.ShowDialog();
+            LoadThongTin();
+            btnUpdate.Enabled = false;
+        }
+
+        private void btnTaiXeTrongTo_Click(object sender, EventArgs e)
+        {
+            frmTaiXeTrongTo frm = new frmTaiXeTrongTo(Int32.Parse(txtTo.Text));
             frm.ShowDialog();
             LoadThongTin();
             btnUpdate.Enabled = false;

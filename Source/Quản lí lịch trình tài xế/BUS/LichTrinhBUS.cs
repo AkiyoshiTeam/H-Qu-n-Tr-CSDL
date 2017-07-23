@@ -25,5 +25,10 @@ namespace BUS
         {
             return LichTrinhDAO.ThemLichTrinh(L);
         }
+
+        public static bool CapNhatLichTrinh(LichTrinhDTO L)
+        {
+            return LichTrinhDAO.CapNhatLichTrinh(L);
+        }
     }
 }

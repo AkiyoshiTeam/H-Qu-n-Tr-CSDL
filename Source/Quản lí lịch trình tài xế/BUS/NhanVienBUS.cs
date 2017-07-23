@@ -60,5 +60,10 @@ namespace BUS
         {
             return NhanVienDAO.LoadNVTrongToTheoKhaNang(MaTo, KhoangCach);
         }
+
+        public static DataTable LoadToTruong()
+        {
+            return NhanVienDAO.LoadToTruong();
+        }
     }
 }

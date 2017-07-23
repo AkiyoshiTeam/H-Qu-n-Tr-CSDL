@@ -173,13 +173,13 @@ namespace Quản_lí_lịch_trình_tài_xế
 
             txtMaLich.Text = dgvLichTrinh.CurrentRow.Cells[0].Value.ToString();
             txtThang.Text = dgvLichTrinh.CurrentRow.Cells[1].Value.ToString();
-            cboMaNV.SelectedValue = dgvLichTrinh.CurrentRow.Cells[2].Value.ToString();
             dtkGioDi.Value = DateTime.Parse(dgvLichTrinh.CurrentRow.Cells[3].Value.ToString());
             dtkGioDen.Value = DateTime.Parse(dgvLichTrinh.CurrentRow.Cells[4].Value.ToString());
             txtNoiDi.Text = dgvLichTrinh.CurrentRow.Cells[5].Value.ToString();
             txtNoiDen.Text = dgvLichTrinh.CurrentRow.Cells[6].Value.ToString();
-            cboChuyenXe.SelectedValue = dgvLichTrinh.CurrentRow.Cells[7].Value.ToString();
             cboTuyenDuong.SelectedValue = dgvLichTrinh.CurrentRow.Cells[8].Value.ToString();
+            cboMaNV.SelectedValue = dgvLichTrinh.CurrentRow.Cells[2].Value.ToString();
+            cboChuyenXe.SelectedValue = dgvLichTrinh.CurrentRow.Cells[7].Value.ToString();
             txtKhoangCach.Text = dgvLichTrinh.CurrentRow.Cells[9].Value.ToString();
         }
 
@@ -192,13 +192,13 @@ namespace Quản_lí_lịch_trình_tài_xế
 
             txtMaLich.Text = dgvLichTrinh.CurrentRow.Cells[0].Value.ToString();
             txtThang.Text = dgvLichTrinh.CurrentRow.Cells[1].Value.ToString();
-            cboMaNV.SelectedValue = dgvLichTrinh.CurrentRow.Cells[2].Value.ToString();
             dtkGioDi.Value = DateTime.Parse(dgvLichTrinh.CurrentRow.Cells[3].Value.ToString());
             dtkGioDen.Value = DateTime.Parse(dgvLichTrinh.CurrentRow.Cells[4].Value.ToString());
             txtNoiDi.Text = dgvLichTrinh.CurrentRow.Cells[5].Value.ToString();
             txtNoiDen.Text = dgvLichTrinh.CurrentRow.Cells[6].Value.ToString();
-            cboChuyenXe.SelectedValue = dgvLichTrinh.CurrentRow.Cells[7].Value.ToString();
             cboTuyenDuong.SelectedValue = dgvLichTrinh.CurrentRow.Cells[8].Value.ToString();
+            cboMaNV.SelectedValue = dgvLichTrinh.CurrentRow.Cells[2].Value.ToString();
+            cboChuyenXe.SelectedValue = dgvLichTrinh.CurrentRow.Cells[7].Value.ToString();
             txtKhoangCach.Text = dgvLichTrinh.CurrentRow.Cells[9].Value.ToString();
         }
 
@@ -211,13 +211,13 @@ namespace Quản_lí_lịch_trình_tài_xế
 
             txtMaLich.Text = dgvLichTrinh.CurrentRow.Cells[0].Value.ToString();
             txtThang.Text = dgvLichTrinh.CurrentRow.Cells[1].Value.ToString();
-            cboMaNV.SelectedValue = dgvLichTrinh.CurrentRow.Cells[2].Value.ToString();
             dtkGioDi.Value = DateTime.Parse(dgvLichTrinh.CurrentRow.Cells[3].Value.ToString());
             dtkGioDen.Value = DateTime.Parse(dgvLichTrinh.CurrentRow.Cells[4].Value.ToString());
             txtNoiDi.Text = dgvLichTrinh.CurrentRow.Cells[5].Value.ToString();
             txtNoiDen.Text = dgvLichTrinh.CurrentRow.Cells[6].Value.ToString();
-            cboChuyenXe.SelectedValue = dgvLichTrinh.CurrentRow.Cells[7].Value.ToString();
             cboTuyenDuong.SelectedValue = dgvLichTrinh.CurrentRow.Cells[8].Value.ToString();
+            cboMaNV.SelectedValue = dgvLichTrinh.CurrentRow.Cells[2].Value.ToString();
+            cboChuyenXe.SelectedValue = dgvLichTrinh.CurrentRow.Cells[7].Value.ToString();
             txtKhoangCach.Text = dgvLichTrinh.CurrentRow.Cells[9].Value.ToString();
         }
 
@@ -264,6 +264,34 @@ namespace Quản_lí_lịch_trình_tài_xế
             {
                 MessageBox.Show("Thêm lịch trình thất bại.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnCapNhat_Click(object sender, EventArgs e)
+        {
+            LichTrinhDTO L = new LichTrinhDTO();
+            L.MaLich = int.Parse(txtMaLich.Text);
+            L.Thang = int.Parse(txtThang.Text);
+            L.MaNV = cboMaNV.SelectedValue.ToString();
+            L.GioDi = dtkGioDi.Value;
+            L.GioDen = dtkGioDen.Value;
+            L.NoiDi = txtNoiDi.Text;
+            L.NoiDen = txtNoiDen.Text;
+            L.MaChuyen = cboChuyenXe.SelectedValue.ToString();
+            if(LichTrinhBUS.CapNhatLichTrinh(L)==true)
+            {
+                MessageBox.Show("Cập nhật lịch trình thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dgvLichTrinh.DataSource = LichTrinhBUS.LoadLichTrinhTo(MaTo);
+                Custom();
+            }
+            else if (LichTrinhBUS.CapNhatLichTrinh(L) == false)
+            {
+                MessageBox.Show("Cập nhật lịch trình thất bại.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

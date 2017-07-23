@@ -82,7 +82,7 @@
             this.txtMatkhaucu.Location = new System.Drawing.Point(146, 58);
             this.txtMatkhaucu.MaxLength = 20;
             this.txtMatkhaucu.Name = "txtMatkhaucu";
-            this.txtMatkhaucu.PasswordChar = '•';
+            this.txtMatkhaucu.PasswordChar = '●';
             this.txtMatkhaucu.Size = new System.Drawing.Size(213, 26);
             this.txtMatkhaucu.TabIndex = 4;
             // 
@@ -91,7 +91,7 @@
             this.txtNhaplai.Location = new System.Drawing.Point(146, 134);
             this.txtNhaplai.MaxLength = 20;
             this.txtNhaplai.Name = "txtNhaplai";
-            this.txtNhaplai.PasswordChar = '•';
+            this.txtNhaplai.PasswordChar = '●';
             this.txtNhaplai.Size = new System.Drawing.Size(213, 26);
             this.txtNhaplai.TabIndex = 5;
             // 
@@ -100,7 +100,7 @@
             this.txtMatkhaumoi.Location = new System.Drawing.Point(146, 96);
             this.txtMatkhaumoi.MaxLength = 20;
             this.txtMatkhaumoi.Name = "txtMatkhaumoi";
-            this.txtMatkhaumoi.PasswordChar = '•';
+            this.txtMatkhaumoi.PasswordChar = '●';
             this.txtMatkhaumoi.Size = new System.Drawing.Size(213, 26);
             this.txtMatkhaumoi.TabIndex = 6;
             // 
@@ -140,7 +140,7 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "frmThayDoiPass";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
