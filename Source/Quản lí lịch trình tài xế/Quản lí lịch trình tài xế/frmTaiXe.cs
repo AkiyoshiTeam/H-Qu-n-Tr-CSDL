@@ -26,9 +26,15 @@ namespace Quản_lí_lịch_trình_tài_xế
         private void frmTaiXe_Load(object sender, EventArgs e)
         {
             if (KTToTruong() == true)
+            {
                 btnLichTrinh.Enabled = true;
+                lịchTrìnhTrongTổToolStripMenuItem.Enabled = true;
+            }
             else if (KTToTruong() == false)
+            {
                 btnLichTrinh.Enabled = false;
+                lịchTrìnhTrongTổToolStripMenuItem.Enabled = false;
+            }
 
             LoadThongTin();
             btnUpdate.Enabled = false;
@@ -219,6 +225,33 @@ namespace Quản_lí_lịch_trình_tài_xế
             frm.ShowDialog();
             LoadThongTin();
             btnUpdate.Enabled = false;
+        }
+
+        private void lịchTrìnhTrongTổToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLichTrinhTo frm = new frmLichTrinhTo(Int32.Parse(txtTo.Text));
+            frm.ShowDialog();
+            LoadThongTin();
+            btnUpdate.Enabled = false;
+        }
+
+        private void tàiXếTrongTổToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTaiXeTrongTo frm = new frmTaiXeTrongTo(Int32.Parse(txtTo.Text));
+            frm.ShowDialog();
+            LoadThongTin();
+            btnUpdate.Enabled = false;
+        }
+
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAbout frm = new frmAbout();
+            frm.ShowDialog();
         }
     }
 }
