@@ -95,10 +95,16 @@ namespace DAO
                 NV.DiaChi = row["DiaChi"].ToString();
                 NV.CMND = row["CMND"].ToString();
                 NV.DienThoai = row["DienThoai"].ToString();
-                NV.KhaNangLai = Int32.Parse(row["KhaNangLai"].ToString());
+                if (row["KhaNangLai"].ToString() == "")
+                    NV.KhaNangLai = 0;
+                else
+                    NV.KhaNangLai = Int32.Parse(row["KhaNangLai"].ToString());
                 NV.Username = row["Username"].ToString();
                 NV.Password = row["Password"].ToString();
-                NV.MaTo = Int32.Parse(row["MaTo"].ToString());
+                if (row["MaTo"].ToString() == "")
+                    NV.MaTo = 0;
+                else
+                    NV.MaTo = Int32.Parse(row["MaTo"].ToString());
             }
             con = DataProvider.Disconnection();
             return NV;

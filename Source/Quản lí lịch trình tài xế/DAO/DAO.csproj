@@ -45,6 +45,7 @@
     <Compile Include="LichTrinhDAO.cs" />
     <Compile Include="NhanVienDAO.cs" />
     <Compile Include="DataProvider.cs" />
+    <Compile Include="PhanQuyenDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TuyenDuongDAO.cs" />
   </ItemGroup>

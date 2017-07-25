@@ -42,7 +42,7 @@ namespace Quản_lí_lịch_trình_tài_xế
                 }
                 else if(NhanVienBUS.LayPQ(txtUsername.Text) == "Quản trị")
                 {
-                    frmQuantri frm = new frmQuantri();
+                    frmQuantri frm = new frmQuantri(NhanVienBUS.LayTenND(txtUsername.Text), NhanVienBUS.LayPQ(txtUsername.Text),txtUsername.Text);
                     this.Hide();
                     frm.ShowDialog();
                     this.Show();
