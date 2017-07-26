@@ -67,6 +67,27 @@ namespace Quản_lí_lịch_trình_tài_xế
             }
         }
 
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            frmThemNV frm = new frmThemNV();
+            frm.ShowDialog();
+            LoadData();
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn thật sự muốn xóa nhân viên này ?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (NhanVienBUS.XoaNV(dgvDanhSach.CurrentRow.Cells[0].Value.ToString()) == true)
+                {
+                    MessageBox.Show("Xóa nhân viên thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadData();
+                }
+                else if (NhanVienBUS.XoaNV(dgvDanhSach.CurrentRow.Cells[0].Value.ToString()) == false)
+                    MessageBox.Show("Xóa nhân viên thất bại.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         void Custom()
         {
             dgvDanhSach.AutoGenerateColumns = false;

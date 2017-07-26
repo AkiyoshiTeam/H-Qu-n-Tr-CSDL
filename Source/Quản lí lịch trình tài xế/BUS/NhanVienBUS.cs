@@ -65,5 +65,20 @@ namespace BUS
         {
             return NhanVienDAO.LoadToTruong();
         }
+
+        public static string GetIDNhanVien()
+        {
+            return NhanVienDAO.GetIDNhanVien();
+        }
+
+        public static bool ThemNV(NhanVienDTO NV)
+        {
+            return NhanVienDAO.ThemNV(NV);
+        }
+
+        public static bool XoaNV(string MaNV)
+        {
+            return NhanVienDAO.XoaNV(MaNV);
+        }
     }
 }
