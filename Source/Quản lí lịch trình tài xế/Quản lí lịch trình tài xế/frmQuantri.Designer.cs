@@ -40,6 +40,10 @@
             this.btnCapnhat = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnXoa = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnLock = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnUnlock = new System.Windows.Forms.ToolStripButton();
             this.sttThongTin = new System.Windows.Forms.ToolStrip();
             this.lbHoten = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
@@ -108,7 +112,11 @@
             this.toolStripSeparator2,
             this.btnCapnhat,
             this.toolStripSeparator1,
-            this.btnXoa});
+            this.btnXoa,
+            this.toolStripSeparator4,
+            this.btnLock,
+            this.toolStripSeparator5,
+            this.btnUnlock});
             this.toolStrip1.Location = new System.Drawing.Point(0, 27);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1350, 68);
@@ -141,6 +149,7 @@
             this.btnCapnhat.Size = new System.Drawing.Size(68, 65);
             this.btnCapnhat.Text = "Cập nhật";
             this.btnCapnhat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnCapnhat.Click += new System.EventHandler(this.btnCapnhat_Click);
             // 
             // toolStripSeparator1
             // 
@@ -157,6 +166,39 @@
             this.btnXoa.Text = "   Xóa   ";
             this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 68);
+            // 
+            // btnLock
+            // 
+            this.btnLock.Image = ((System.Drawing.Image)(resources.GetObject("btnLock.Image")));
+            this.btnLock.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnLock.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnLock.Name = "btnLock";
+            this.btnLock.Size = new System.Drawing.Size(61, 65);
+            this.btnLock.Text = "  Lock  ";
+            this.btnLock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnLock.Click += new System.EventHandler(this.btnLock_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 68);
+            // 
+            // btnUnlock
+            // 
+            this.btnUnlock.Image = ((System.Drawing.Image)(resources.GetObject("btnUnlock.Image")));
+            this.btnUnlock.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnUnlock.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnUnlock.Name = "btnUnlock";
+            this.btnUnlock.RightToLeftAutoMirrorImage = true;
+            this.btnUnlock.Size = new System.Drawing.Size(61, 65);
+            this.btnUnlock.Text = "Unlock ";
+            this.btnUnlock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnUnlock.Click += new System.EventHandler(this.btnUnlock_Click);
             // 
             // sttThongTin
             // 
@@ -204,7 +246,10 @@
             this.dgvDanhSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDanhSach.Size = new System.Drawing.Size(1350, 572);
             this.dgvDanhSach.TabIndex = 4;
+            this.dgvDanhSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSach_CellClick);
             this.dgvDanhSach.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvDanhSach_CellFormatting);
+            this.dgvDanhSach.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvDanhSach_KeyDown);
+            this.dgvDanhSach.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvDanhSach_KeyUp);
             // 
             // frmQuantri
             // 
@@ -254,5 +299,9 @@
         private System.Windows.Forms.ToolStripLabel lbChucvu;
         private System.Windows.Forms.ToolStripMenuItem đổiMậtKhẩuToolStripMenuItem;
         private System.Windows.Forms.DataGridView dgvDanhSach;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripButton btnLock;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripButton btnUnlock;
     }
 }

@@ -47,6 +47,10 @@ namespace Quản_lí_lịch_trình_tài_xế
         private void frmQuantri_Load(object sender, EventArgs e)
         {
             LoadData();
+            btnXoa.Enabled = false;
+            btnCapnhat.Enabled = false;
+            btnLock.Enabled = false;
+            btnUnlock.Enabled = false;
         }
 
         void LoadData()
@@ -71,6 +75,10 @@ namespace Quản_lí_lịch_trình_tài_xế
         {
             frmThemNV frm = new frmThemNV();
             frm.ShowDialog();
+            btnXoa.Enabled = false;
+            btnCapnhat.Enabled = false;
+            btnLock.Enabled = false;
+            btnUnlock.Enabled = false;
             LoadData();
         }
 
@@ -81,10 +89,129 @@ namespace Quản_lí_lịch_trình_tài_xế
                 if (NhanVienBUS.XoaNV(dgvDanhSach.CurrentRow.Cells[0].Value.ToString()) == true)
                 {
                     MessageBox.Show("Xóa nhân viên thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnXoa.Enabled = false;
+                    btnCapnhat.Enabled = false;
+                    btnLock.Enabled = false;
+                    btnUnlock.Enabled = false;
                     LoadData();
                 }
                 else if (NhanVienBUS.XoaNV(dgvDanhSach.CurrentRow.Cells[0].Value.ToString()) == false)
                     MessageBox.Show("Xóa nhân viên thất bại.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnCapnhat_Click(object sender, EventArgs e)
+        {
+            NhanVienDTO NV = new NhanVienDTO();
+            NV.MaNV = dgvDanhSach.CurrentRow.Cells[0].Value.ToString();
+            NV.HoTen = dgvDanhSach.CurrentRow.Cells[1].Value.ToString();
+            NV.DiaChi = dgvDanhSach.CurrentRow.Cells[2].Value.ToString();
+            NV.CMND = dgvDanhSach.CurrentRow.Cells[3].Value.ToString();
+            NV.DienThoai = dgvDanhSach.CurrentRow.Cells[4].Value.ToString();
+            if (dgvDanhSach.CurrentRow.Cells[5].Value.ToString() == "")
+                NV.KhaNangLai = 0;
+            else
+                NV.KhaNangLai = Int32.Parse(dgvDanhSach.CurrentRow.Cells[5].Value.ToString());
+            NV.Username = dgvDanhSach.CurrentRow.Cells[6].Value.ToString();
+            if (dgvDanhSach.CurrentRow.Cells[8].Value.ToString() == "")
+                NV.MaPQ = 0;
+            else
+                NV.MaPQ = Int32.Parse(dgvDanhSach.CurrentRow.Cells[8].Value.ToString());
+            if (dgvDanhSach.CurrentRow.Cells[9].Value.ToString() == "")
+                NV.MaTo = 0;
+            else
+                NV.MaTo = Int32.Parse(dgvDanhSach.CurrentRow.Cells[9].Value.ToString());
+
+            frmCapNhatNV frm = new frmCapNhatNV(NV);
+            frm.ShowDialog();
+            btnXoa.Enabled = false;
+            btnCapnhat.Enabled = false;
+            btnLock.Enabled = false;
+            btnUnlock.Enabled = false;
+            LoadData();
+        }
+
+        private void dgvDanhSach_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnXoa.Enabled = true;
+            btnCapnhat.Enabled = true;
+            if(dgvDanhSach.CurrentRow.Cells[10].Value.ToString()=="True")
+            {
+                btnLock.Enabled = true;
+                btnUnlock.Enabled = false;
+            }
+            else if(dgvDanhSach.CurrentRow.Cells[10].Value.ToString() == "False")
+            {
+                btnUnlock.Enabled = true;
+                btnLock.Enabled = false;
+            }
+        }
+
+        private void btnLock_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn thật sự muốn khóa tài khoản này ?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (NhanVienBUS.Khoa(dgvDanhSach.CurrentRow.Cells[0].Value.ToString()) == true)
+                {
+                    MessageBox.Show("Khóa tài khoản thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnXoa.Enabled = false;
+                    btnCapnhat.Enabled = false;
+                    btnLock.Enabled = false;
+                    btnUnlock.Enabled = false;
+                    LoadData();
+                }
+                else
+                    MessageBox.Show("Khóa tài khoản thất bại.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnUnlock_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn thật sự muốn mở khóa tài khoản này ?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (NhanVienBUS.MoKhoa(dgvDanhSach.CurrentRow.Cells[0].Value.ToString()) == true)
+                {
+                    MessageBox.Show("Mở khóa tài khoản thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnXoa.Enabled = false;
+                    btnCapnhat.Enabled = false;
+                    btnLock.Enabled = false;
+                    btnUnlock.Enabled = false;
+                    LoadData();
+                }
+                else
+                    MessageBox.Show("Mở khóa tài khoản thất bại.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dgvDanhSach_KeyUp(object sender, KeyEventArgs e)
+        {
+            btnXoa.Enabled = true;
+            btnCapnhat.Enabled = true;
+            if (dgvDanhSach.CurrentRow.Cells[10].Value.ToString() == "True")
+            {
+                btnLock.Enabled = true;
+                btnUnlock.Enabled = false;
+            }
+            else if (dgvDanhSach.CurrentRow.Cells[10].Value.ToString() == "False")
+            {
+                btnUnlock.Enabled = true;
+                btnLock.Enabled = false;
+            }
+        }
+
+        private void dgvDanhSach_KeyDown(object sender, KeyEventArgs e)
+        {
+            btnXoa.Enabled = true;
+            btnCapnhat.Enabled = true;
+            if (dgvDanhSach.CurrentRow.Cells[10].Value.ToString() == "True")
+            {
+                btnLock.Enabled = true;
+                btnUnlock.Enabled = false;
+            }
+            else if (dgvDanhSach.CurrentRow.Cells[10].Value.ToString() == "False")
+            {
+                btnUnlock.Enabled = true;
+                btnLock.Enabled = false;
             }
         }
 

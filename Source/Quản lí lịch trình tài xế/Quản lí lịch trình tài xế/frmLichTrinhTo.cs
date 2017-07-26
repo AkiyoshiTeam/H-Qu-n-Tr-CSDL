@@ -26,10 +26,25 @@ namespace Quản_lí_lịch_trình_tài_xế
         private void frmLichTrinhTo_Load(object sender, EventArgs e)
         {
             LoadData();
+            txtKhoangCach.ResetText();
             txtMaLich.Text = "Chương trình phát sinh tự động.";
             cboChuyenXe.Enabled = false;
             cboMaNV.Enabled = false;
             btnCapNhat.Enabled = false;
+        }
+
+        string KiemTra()
+        {
+            string KT = "";
+            if (txtThang.Text == "")
+                KT += "- Tháng không được để trống.\n";
+            if(txtNoiDi.Text =="")
+                KT += "- Nơi đi không được để trống.\n";
+            if(txtNoiDen.Text =="")
+                KT += "- Nơi đến không được để trống.\n";
+            if(txtKhoangCach.Text =="")
+                KT += "- Khoảng cách không được để trống.\n";
+            return KT;
         }
 
         void LoadData()
@@ -244,49 +259,59 @@ namespace Quản_lí_lịch_trình_tài_xế
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            LichTrinhDTO L = new LichTrinhDTO();
-            L.Thang = int.Parse(txtThang.Text);
-            L.MaNV = cboMaNV.SelectedValue.ToString();
-            L.GioDi = dtkGioDi.Value;
-            L.GioDen = dtkGioDen.Value;
-            L.NoiDi = txtNoiDi.Text;
-            L.NoiDen = txtNoiDen.Text;
-            L.MaChuyen = cboChuyenXe.SelectedValue.ToString();
-            if(LichTrinhBUS.ThemLichTrinh(L)==true)
+            if (KiemTra() == "")
             {
-                MessageBox.Show("Thêm lịch trình thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                dgvLichTrinh.DataSource = LichTrinhBUS.LoadLichTrinhTo(MaTo);
-                Custom();
-                dgvLichTrinh.ClearSelection();
-                Reset();
+                LichTrinhDTO L = new LichTrinhDTO();
+                L.Thang = int.Parse(txtThang.Text);
+                L.MaNV = cboMaNV.SelectedValue.ToString();
+                L.GioDi = dtkGioDi.Value;
+                L.GioDen = dtkGioDen.Value;
+                L.NoiDi = txtNoiDi.Text;
+                L.NoiDen = txtNoiDen.Text;
+                L.MaChuyen = cboChuyenXe.SelectedValue.ToString();
+                if (LichTrinhBUS.ThemLichTrinh(L) == true)
+                {
+                    MessageBox.Show("Thêm lịch trình thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dgvLichTrinh.DataSource = LichTrinhBUS.LoadLichTrinhTo(MaTo);
+                    Custom();
+                    dgvLichTrinh.ClearSelection();
+                    Reset();
+                }
+                else if (LichTrinhBUS.ThemLichTrinh(L) == false)
+                {
+                    MessageBox.Show("Thêm lịch trình thất bại.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else if(LichTrinhBUS.ThemLichTrinh(L) == false)
-            {
-                MessageBox.Show("Thêm lịch trình thất bại.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            else
+                MessageBox.Show(KiemTra(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
-            LichTrinhDTO L = new LichTrinhDTO();
-            L.MaLich = int.Parse(txtMaLich.Text);
-            L.Thang = int.Parse(txtThang.Text);
-            L.MaNV = cboMaNV.SelectedValue.ToString();
-            L.GioDi = dtkGioDi.Value;
-            L.GioDen = dtkGioDen.Value;
-            L.NoiDi = txtNoiDi.Text;
-            L.NoiDen = txtNoiDen.Text;
-            L.MaChuyen = cboChuyenXe.SelectedValue.ToString();
-            if(LichTrinhBUS.CapNhatLichTrinh(L)==true)
+            if (KiemTra() == "")
             {
-                MessageBox.Show("Cập nhật lịch trình thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                dgvLichTrinh.DataSource = LichTrinhBUS.LoadLichTrinhTo(MaTo);
-                Custom();
+                LichTrinhDTO L = new LichTrinhDTO();
+                L.MaLich = int.Parse(txtMaLich.Text);
+                L.Thang = int.Parse(txtThang.Text);
+                L.MaNV = cboMaNV.SelectedValue.ToString();
+                L.GioDi = dtkGioDi.Value;
+                L.GioDen = dtkGioDen.Value;
+                L.NoiDi = txtNoiDi.Text;
+                L.NoiDen = txtNoiDen.Text;
+                L.MaChuyen = cboChuyenXe.SelectedValue.ToString();
+                if (LichTrinhBUS.CapNhatLichTrinh(L) == true)
+                {
+                    MessageBox.Show("Cập nhật lịch trình thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dgvLichTrinh.DataSource = LichTrinhBUS.LoadLichTrinhTo(MaTo);
+                    Custom();
+                }
+                else if (LichTrinhBUS.CapNhatLichTrinh(L) == false)
+                {
+                    MessageBox.Show("Cập nhật lịch trình thất bại.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else if (LichTrinhBUS.CapNhatLichTrinh(L) == false)
-            {
-                MessageBox.Show("Cập nhật lịch trình thất bại.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            else
+                MessageBox.Show(KiemTra(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

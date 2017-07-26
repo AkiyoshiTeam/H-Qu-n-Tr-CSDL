@@ -30,37 +30,42 @@ namespace Quản_lí_lịch_trình_tài_xế
             NV.Username = txtUsername.Text;
             NV.Password = txtPassword.Text;
 
-            if(NhanVienBUS.DangNhap(NV) == true)
+            if (NhanVienBUS.LayTinhTrang(txtUsername.Text) == "Unlock")
             {
-                if(NhanVienBUS.LayPQ(txtUsername.Text) == "Quản lí")
+                if (NhanVienBUS.DangNhap(NV) == true)
                 {
-                    frmQuanli frm = new frmQuanli();
-                    this.Hide();
-                    frm.ShowDialog();
-                    this.Show();
-                    txtPassword.ResetText();
+                    if (NhanVienBUS.LayPQ(txtUsername.Text) == "Quản lí")
+                    {
+                        frmQuanli frm = new frmQuanli();
+                        this.Hide();
+                        frm.ShowDialog();
+                        this.Show();
+                        txtPassword.ResetText();
+                    }
+                    else if (NhanVienBUS.LayPQ(txtUsername.Text) == "Quản trị")
+                    {
+                        frmQuantri frm = new frmQuantri(NhanVienBUS.LayTenND(txtUsername.Text), NhanVienBUS.LayPQ(txtUsername.Text), txtUsername.Text);
+                        this.Hide();
+                        frm.ShowDialog();
+                        this.Show();
+                        txtPassword.ResetText();
+                    }
+                    else if (NhanVienBUS.LayPQ(txtUsername.Text) == "Tài xế")
+                    {
+                        frmTaiXe frm = new frmTaiXe(NhanVienBUS.LayTenND(txtUsername.Text), NhanVienBUS.LayPQ(txtUsername.Text), txtUsername.Text);
+                        this.Hide();
+                        frm.ShowDialog();
+                        this.Show();
+                        txtPassword.ResetText();
+                    }
                 }
-                else if(NhanVienBUS.LayPQ(txtUsername.Text) == "Quản trị")
+                else if (NhanVienBUS.DangNhap(NV) == false)
                 {
-                    frmQuantri frm = new frmQuantri(NhanVienBUS.LayTenND(txtUsername.Text), NhanVienBUS.LayPQ(txtUsername.Text),txtUsername.Text);
-                    this.Hide();
-                    frm.ShowDialog();
-                    this.Show();
-                    txtPassword.ResetText();
-                }
-                else if(NhanVienBUS.LayPQ(txtUsername.Text) == "Tài xế")
-                {
-                    frmTaiXe frm = new frmTaiXe(NhanVienBUS.LayTenND(txtUsername.Text), NhanVienBUS.LayPQ(txtUsername.Text),txtUsername.Text);
-                    this.Hide();
-                    frm.ShowDialog();
-                    this.Show();
-                    txtPassword.ResetText();
+                    MessageBox.Show("Sai username hoặc mật khẩu.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else if(NhanVienBUS.DangNhap(NV) == false)
-            {
-                MessageBox.Show("Sai username hoặc mật khẩu.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            else
+                MessageBox.Show("Tài khoản đã bị khóa.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

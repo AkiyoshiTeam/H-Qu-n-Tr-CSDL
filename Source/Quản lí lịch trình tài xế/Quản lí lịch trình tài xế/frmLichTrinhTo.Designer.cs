@@ -131,6 +131,7 @@
             this.dtkGioDen.Name = "dtkGioDen";
             this.dtkGioDen.Size = new System.Drawing.Size(309, 26);
             this.dtkGioDen.TabIndex = 52;
+            this.toolTip1.SetToolTip(this.dtkGioDen, "Định dạng: dd/mm/yyyy HH:mm tt");
             // 
             // dtkGioDi
             // 
@@ -140,6 +141,7 @@
             this.dtkGioDi.Name = "dtkGioDi";
             this.dtkGioDi.Size = new System.Drawing.Size(309, 26);
             this.dtkGioDi.TabIndex = 51;
+            this.toolTip1.SetToolTip(this.dtkGioDi, "Định dạng: dd/mm/yyyy HH:mm tt");
             // 
             // cboMaNV
             // 

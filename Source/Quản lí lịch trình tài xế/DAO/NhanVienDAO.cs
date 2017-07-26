@@ -79,6 +79,23 @@ namespace DAO
             return TenND;
         }
 
+        public static string LayTinhTrang(string Username)
+        {
+            string TinhTrang = "";
+            SqlConnection con = DataProvider.Connection();
+            string sql = @"Select T.TenTinhTrang  From NhanVien NV join TinhTrang T on NV.TinhTrang=T.MaTinhTrang Where Username='" + Username + "'";
+            SqlCommand cmd = new SqlCommand(sql, con);
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            foreach (DataRow row in dt.Rows)
+            {
+                TinhTrang = row["TenTinhTrang"].ToString();
+            }
+            con = DataProvider.Disconnection();
+            return TinhTrang;
+        }
+
         public static NhanVienDTO LoadThongTinTaiXe(string Username)
         {
             NhanVienDTO NV = new NhanVienDTO();
@@ -285,6 +302,82 @@ namespace DAO
             {
                 SqlConnection con = DataProvider.Connection();
                 SqlCommand cmd = new SqlCommand("sp_XoaNV", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@MaNV", SqlDbType.VarChar);
+
+                cmd.Parameters["@MaNV"].Value = MaNV;
+                cmd.ExecuteNonQuery();
+                con.Close();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public static bool CapNhatNV(NhanVienDTO NV)
+        {
+            try
+            {
+                SqlConnection con = DataProvider.Connection();
+                SqlCommand cmd = new SqlCommand("sp_CapNhatNV", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@MaNV", SqlDbType.VarChar);
+                cmd.Parameters.Add("@Hoten", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@Diachi", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@CMND", SqlDbType.VarChar);
+                cmd.Parameters.Add("@Dienthoai", SqlDbType.VarChar);
+                cmd.Parameters.Add("@Khananglai", SqlDbType.Int);
+                cmd.Parameters.Add("@Username", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@MaPQ", SqlDbType.Int);
+                cmd.Parameters.Add("@MaTo", SqlDbType.Int);
+
+                cmd.Parameters["@MaNV"].Value = NV.MaNV;
+                cmd.Parameters["@Hoten"].Value = NV.HoTen;
+                cmd.Parameters["@Diachi"].Value = NV.DiaChi;
+                cmd.Parameters["@CMND"].Value = NV.CMND;
+                cmd.Parameters["@Dienthoai"].Value = NV.DienThoai;
+                cmd.Parameters["@Khananglai"].Value = NV.KhaNangLai;
+                cmd.Parameters["@Username"].Value = NV.Username;
+                cmd.Parameters["@MaPQ"].Value = NV.MaPQ;
+                cmd.Parameters["@MaTo"].Value = NV.MaTo;
+                cmd.ExecuteNonQuery();
+                con.Close();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public static bool Khoa(string MaNV)
+        {
+            try
+            {
+                SqlConnection con = DataProvider.Connection();
+                SqlCommand cmd = new SqlCommand("sp_Khoa", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@MaNV", SqlDbType.VarChar);
+
+                cmd.Parameters["@MaNV"].Value = MaNV;
+                cmd.ExecuteNonQuery();
+                con.Close();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public static bool MoKhoa(string MaNV)
+        {
+            try
+            {
+                SqlConnection con = DataProvider.Connection();
+                SqlCommand cmd = new SqlCommand("sp_MoKhoa", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("@MaNV", SqlDbType.VarChar);
 

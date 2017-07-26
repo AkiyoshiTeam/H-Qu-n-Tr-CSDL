@@ -80,5 +80,25 @@ namespace BUS
         {
             return NhanVienDAO.XoaNV(MaNV);
         }
+
+        public static bool CapNhatNV(NhanVienDTO NV)
+        {
+            return NhanVienDAO.CapNhatNV(NV);
+        }
+
+        public static string LayTinhTrang(string Username)
+        {
+            return NhanVienDAO.LayTinhTrang(Username);
+        }
+
+        public static bool Khoa(string MaNV)
+        {
+            return NhanVienDAO.Khoa(MaNV);
+        }
+
+        public static bool MoKhoa(string MaNV)
+        {
+            return NhanVienDAO.MoKhoa(MaNV);
+        }
     }
 }

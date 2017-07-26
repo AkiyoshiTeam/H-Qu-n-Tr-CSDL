@@ -124,3 +124,41 @@ as
    Delete from NhanVien Where MaNV=@MaNV
  end
 go
+-- Cập nhật nhân viên --
+Create proc sp_CapNhatNV
+ @MaNV varchar(10),
+ @Hoten nvarchar(50),
+ @Diachi nvarchar(100),
+ @CMND varchar(12),
+ @Dienthoai varchar(11),
+ @Khananglai int,
+ @Username nvarchar(50),
+ @MaPQ int,
+ @MaTo int
+as
+ begin
+    Update  NhanVien 
+	set HoTen =@Hoten, DiaChi=@Diachi, CMND=@CMND, DienThoai=@Dienthoai, KhaNangLai=@Khananglai, Username=@Username, MaPQ=@MaPQ, MaTo=@MaTo
+	where MaNV=@MaNV
+ end
+go
+-- Khóa tài khoản --
+Create proc sp_Khoa
+ @MaNV varchar(10)
+as
+ begin
+    Update  NhanVien 
+	set TinhTrang = 'False'
+	where MaNV=@MaNV
+ end
+go
+-- Mở khóa tài khoản --
+Create proc sp_MoKhoa
+ @MaNV varchar(10)
+as
+ begin
+    Update  NhanVien 
+	set TinhTrang = 'True'
+	where MaNV=@MaNV
+ end
+go

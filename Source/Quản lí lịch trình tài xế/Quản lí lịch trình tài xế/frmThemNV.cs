@@ -37,6 +37,16 @@ namespace Quản_lí_lịch_trình_tài_xế
             txtMaNV.Text = NhanVienBUS.GetIDNhanVien();
         }
 
+        string KiemTra()
+        {
+            string KT = "";
+            if (txtHoten.Text == "")
+                KT += "- Họ tên không được để trống.\n";
+            if (txtUsername.Text == "")
+                KT += "- Username không được để trống. \n";
+            return KT;
+        }
+
         void Reset()
         {
             txtMaNV.Text = NhanVienBUS.GetIDNhanVien();
@@ -51,30 +61,35 @@ namespace Quản_lí_lịch_trình_tài_xế
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            NhanVienDTO NV = new NhanVienDTO();
-            NV.MaNV = txtMaNV.Text;
-            NV.HoTen = txtHoten.Text;
-            NV.DiaChi = txtDiaChi.Text;
-            NV.CMND = txtCMND.Text;
-            NV.DienThoai = txtDienthoai.Text;
-            if (txtKhanang.Text == "")
-                NV.KhaNangLai = 0;
-            else
-                NV.KhaNangLai = Int32.Parse(txtKhanang.Text);
-            NV.Username = txtUsername.Text;
-            NV.Password = txtPassword.Text;
-            NV.MaPQ = Int32.Parse(cboPhanQuyen.SelectedValue.ToString());
-            NV.MaTo = Int32.Parse(cboTo.SelectedValue.ToString());
-            if (NhanVienBUS.ThemNV(NV) == true)
+            if (KiemTra() == "")
             {
-                MessageBox.Show("Thêm nhân viên thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Reset();
+                NhanVienDTO NV = new NhanVienDTO();
+                NV.MaNV = txtMaNV.Text;
+                NV.HoTen = txtHoten.Text;
+                NV.DiaChi = txtDiaChi.Text;
+                NV.CMND = txtCMND.Text;
+                NV.DienThoai = txtDienthoai.Text;
+                if (txtKhanang.Text == "")
+                    NV.KhaNangLai = 0;
+                else
+                    NV.KhaNangLai = Int32.Parse(txtKhanang.Text);
+                NV.Username = txtUsername.Text;
+                NV.Password = txtPassword.Text;
+                NV.MaPQ = Int32.Parse(cboPhanQuyen.SelectedValue.ToString());
+                NV.MaTo = Int32.Parse(cboTo.SelectedValue.ToString());
+                if (NhanVienBUS.ThemNV(NV) == true)
+                {
+                    MessageBox.Show("Thêm nhân viên thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Reset();
 
+                }
+                else if (NhanVienBUS.ThemNV(NV) == false)
+                {
+                    MessageBox.Show("Thêm nhân viên thất bại.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else if (NhanVienBUS.ThemNV(NV) == false)
-            {
-                MessageBox.Show("Thêm nhân viên thất bại.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            else
+                MessageBox.Show(KiemTra(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
