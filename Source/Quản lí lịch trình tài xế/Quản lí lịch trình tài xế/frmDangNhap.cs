@@ -36,7 +36,7 @@ namespace Quản_lí_lịch_trình_tài_xế
                 {
                     if (NhanVienBUS.LayPQ(txtUsername.Text) == "Quản lí")
                     {
-                        frmQuanli frm = new frmQuanli();
+                        frmQuanli frm = new frmQuanli(NhanVienBUS.LayTenND(txtUsername.Text), NhanVienBUS.LayPQ(txtUsername.Text), txtUsername.Text);
                         this.Hide();
                         frm.ShowDialog();
                         this.Show();

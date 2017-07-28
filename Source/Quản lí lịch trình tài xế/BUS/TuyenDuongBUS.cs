@@ -20,5 +20,25 @@ namespace BUS
         {
             return TuyenDuongDAO.LayKhoangCach(MaTuyen);
         }
+
+        public static string GetIDTuyenDuong()
+        {
+            return TuyenDuongDAO.GetIDTuyenDuong();
+        }
+
+        public static bool ThemTuyenDuong(TuyenDuongDTO T)
+        {
+            return TuyenDuongDAO.ThemTuyenDuong(T);
+        }
+
+        public static bool CapNhatTuyenDuong(TuyenDuongDTO T)
+        {
+            return TuyenDuongDAO.CapNhatTuyenDuong(T);
+        }
+
+        public static bool XoaTuyenDuong(string MaTuyen)
+        {
+            return TuyenDuongDAO.XoaTuyenDuong(MaTuyen);
+        }
     }
 }

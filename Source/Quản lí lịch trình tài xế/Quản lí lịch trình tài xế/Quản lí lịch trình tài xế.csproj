@@ -60,6 +60,12 @@
     <Compile Include="frmCapNhatNV.Designer.cs">
       <DependentUpon>frmCapNhatNV.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmChuyenXe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChuyenXe.Designer.cs">
+      <DependentUpon>frmChuyenXe.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +114,12 @@
     <Compile Include="frmThemNV.Designer.cs">
       <DependentUpon>frmThemNV.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTuyenDuong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTuyenDuong.Designer.cs">
+      <DependentUpon>frmTuyenDuong.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAbout.resx">
@@ -115,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCapNhatNV.resx">
       <DependentUpon>frmCapNhatNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChuyenXe.resx">
+      <DependentUpon>frmChuyenXe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
@@ -139,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmThemNV.resx">
       <DependentUpon>frmThemNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTuyenDuong.resx">
+      <DependentUpon>frmTuyenDuong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

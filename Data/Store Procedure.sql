@@ -162,3 +162,106 @@ as
 	where MaNV=@MaNV
  end
 go
+-- Get ID tuyến đường --
+Create proc sp_GetIDTuyenDuong
+ @MaTuyen varchar(10) output
+as
+ begin
+   declare @n numeric
+   declare @Z nchar(2),@W nchar(8)
+   set @Z='TD'   
+   if exists (Select top 1 * From TuyenDuong)
+       Select @n= max(cast(Substring(MaTuyen,3,8) as numeric)) From TuyenDuong
+   else
+       set @n = 0
+   set @n=@n+1
+   set @W = cast(@n as nchar(8))
+   While len(@W)<5
+      set @W='0'+@W
+   set @MaTuyen = @Z+@W
+ end
+go
+-- Thêm tuyến đường --
+Create proc sp_ThemTuyenDuong
+ @MaTuyen varchar(10),
+ @TenTuyen nvarchar(50),
+ @KhoangCach bigint
+as
+ begin
+    Insert into TuyenDuong(MaTuyen,TenTuyen,KhoangCach)
+	Values (@MaTuyen,@TenTuyen,@KhoangCach)
+ end
+go
+-- Cập nhật tuyến đường --
+Create proc sp_CapNhatTuyenDuong
+ @MaTuyen varchar(10),
+ @TenTuyen nvarchar(50),
+ @KhoangCach bigint
+as
+ begin
+    Update TuyenDuong
+	set TenTuyen = @TenTuyen, KhoangCach = @KhoangCach
+	Where MaTuyen = @MaTuyen
+ end
+go
+-- Xóa tuyến đường --
+Create proc sp_XoaTuyenDuong
+ @MaTuyen varchar(10)
+as
+ begin
+    Delete from TuyenDuong where MaTuyen = @MaTuyen 
+ end
+go
+-- Get ID chuyến xe --
+Create proc sp_GetIDChuyenXe
+ @MaChuyen varchar(10) output
+as
+ begin
+   declare @n numeric
+   declare @Z nchar(1),@W nchar(8)
+   set @Z='C'   
+   if exists (Select top 1 * From ChuyenXe)
+       Select @n= max(cast(Substring(MaChuyen,3,8) as numeric)) From ChuyenXe
+   else
+       set @n = 0
+   set @n=@n+1
+   set @W = cast(@n as nchar(8))
+   While len(@W)<6
+      set @W='0'+@W
+   set @MaChuyen = @Z+@W
+ end
+go
+-- Thêm chuyến xe --
+Create proc sp_ThemChuyenXe
+ @MaChuyen varchar(10),
+ @HangXe nvarchar(50),
+ @MaTuyen varchar(10),
+ @GiaVe bigint
+as
+ begin
+    Insert into ChuyenXe(MaChuyen,HangXe,GiaVe,MaTuyen)
+	Values (@MaChuyen,@HangXe,@GiaVe,@MaTuyen)
+ end
+go
+-- Cập nhật chuyến xe --
+Create proc sp_CapNhatChuyenXe
+ @MaChuyen varchar(10),
+ @HangXe nvarchar(50),
+ @MaTuyen varchar(10),
+ @GiaVe bigint
+as
+ begin
+    Update ChuyenXe
+	set HangXe=@HangXe, GiaVe = @GiaVe, MaTuyen = @MaTuyen
+	Where MaChuyen = @MaChuyen
+ end
+go
+-- Xóa chuyến xe --
+Create proc sp_XoaChuyenXe
+ @MaChuyen varchar(10)
+as
+ begin
+    Delete from ChuyenXe where MaChuyen = @MaChuyen 
+ end
+go
+--

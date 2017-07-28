@@ -20,5 +20,25 @@ namespace BUS
         {
             return ChuyenXeDAO.LoadChuyenXeTheoTuyenDuong(MaTuyen);
         }
+
+        public static string GetIDChuyenXe()
+        {
+            return ChuyenXeDAO.GetIDChuyenXe();
+        }
+
+        public static bool ThemChuyenXe(ChuyenXeDTO C)
+        {
+            return ChuyenXeDAO.ThemChuyenXe(C);
+        }
+
+        public static bool CapNhatChuyenXe(ChuyenXeDTO C)
+        {
+            return ChuyenXeDAO.CapNhatChuyenXe(C);
+        }
+
+        public static bool XoaChuyenXe(string MaChuyen)
+        {
+            return ChuyenXeDAO.XoaChuyenXe(MaChuyen);
+        }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThemNV));
             this.lbTitle = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -53,6 +54,7 @@
             this.cboTo = new System.Windows.Forms.ComboBox();
             this.cboPhanQuyen = new System.Windows.Forms.ComboBox();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // lbTitle
@@ -207,6 +209,8 @@
             this.txtCMND.Size = new System.Drawing.Size(333, 26);
             this.txtCMND.TabIndex = 38;
             this.txtCMND.TabStop = false;
+            this.toolTip1.SetToolTip(this.txtCMND, "Chỉ được nhập số");
+            this.txtCMND.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCMND_KeyPress);
             // 
             // txtMaNV
             // 
@@ -225,6 +229,8 @@
             this.txtDienthoai.Size = new System.Drawing.Size(333, 26);
             this.txtDienthoai.TabIndex = 37;
             this.txtDienthoai.TabStop = false;
+            this.toolTip1.SetToolTip(this.txtDienthoai, "Chỉ được nhập số");
+            this.txtDienthoai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDienthoai_KeyPress);
             // 
             // txtUsername
             // 
@@ -242,6 +248,7 @@
             this.txtKhanang.Size = new System.Drawing.Size(286, 26);
             this.txtKhanang.TabIndex = 36;
             this.txtKhanang.TabStop = false;
+            this.toolTip1.SetToolTip(this.txtKhanang, "Chỉ được nhập số");
             this.txtKhanang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKhanang_KeyPress);
             // 
             // label11
@@ -352,5 +359,6 @@
         private System.Windows.Forms.ComboBox cboTo;
         private System.Windows.Forms.ComboBox cboPhanQuyen;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

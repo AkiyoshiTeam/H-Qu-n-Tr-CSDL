@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCapNhatNV));
             this.btnCancel = new System.Windows.Forms.Button();
             this.cboPhanQuyen = new System.Windows.Forms.ComboBox();
@@ -51,6 +52,7 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtKhanang = new System.Windows.Forms.TextBox();
             this.lbTitle = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // btnCancel
@@ -213,6 +215,8 @@
             this.txtCMND.Size = new System.Drawing.Size(333, 26);
             this.txtCMND.TabIndex = 63;
             this.txtCMND.TabStop = false;
+            this.toolTip1.SetToolTip(this.txtCMND, "Chỉ được nhập số");
+            this.txtCMND.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCMND_KeyPress);
             // 
             // txtMaNV
             // 
@@ -231,6 +235,8 @@
             this.txtDienthoai.Size = new System.Drawing.Size(333, 26);
             this.txtDienthoai.TabIndex = 62;
             this.txtDienthoai.TabStop = false;
+            this.toolTip1.SetToolTip(this.txtDienthoai, "Chỉ được nhập số");
+            this.txtDienthoai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDienthoai_KeyPress);
             // 
             // txtUsername
             // 
@@ -248,6 +254,8 @@
             this.txtKhanang.Size = new System.Drawing.Size(286, 26);
             this.txtKhanang.TabIndex = 61;
             this.txtKhanang.TabStop = false;
+            this.toolTip1.SetToolTip(this.txtKhanang, "Chỉ được nhập số");
+            this.txtKhanang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKhanang_KeyPress);
             // 
             // lbTitle
             // 
@@ -290,7 +298,7 @@
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmCapNhatNV";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cập nhật nhân viên";
@@ -324,5 +332,6 @@
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtKhanang;
         private System.Windows.Forms.Label lbTitle;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
