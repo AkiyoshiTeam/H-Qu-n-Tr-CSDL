@@ -304,6 +304,8 @@ namespace Quản_lí_lịch_trình_tài_xế
                     MessageBox.Show("Cập nhật lịch trình thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dgvLichTrinh.DataSource = LichTrinhBUS.LoadLichTrinhTo(MaTo);
                     Custom();
+                    dgvLichTrinh.ClearSelection();
+                    Reset();
                 }
                 else if (LichTrinhBUS.CapNhatLichTrinh(L) == false)
                 {
@@ -317,6 +319,14 @@ namespace Quản_lí_lịch_trình_tài_xế
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtThang_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

@@ -212,6 +212,7 @@
             this.txtThang.Name = "txtThang";
             this.txtThang.Size = new System.Drawing.Size(350, 26);
             this.txtThang.TabIndex = 15;
+            this.txtThang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtThang_KeyPress);
             // 
             // txtNoiDen
             // 

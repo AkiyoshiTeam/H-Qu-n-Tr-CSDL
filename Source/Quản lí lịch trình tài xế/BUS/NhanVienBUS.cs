@@ -100,5 +100,10 @@ namespace BUS
         {
             return NhanVienDAO.MoKhoa(MaNV);
         }
+
+        public static DataTable LoadNVTheoKhaNang(long KhoangCach)
+        {
+            return NhanVienDAO.LoadNVTheoKhaNang(KhoangCach);
+        }
     }
 }

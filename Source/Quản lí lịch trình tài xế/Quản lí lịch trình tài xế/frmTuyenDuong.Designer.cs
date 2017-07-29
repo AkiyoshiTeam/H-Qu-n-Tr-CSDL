@@ -81,7 +81,7 @@
             this.groupBox1.Size = new System.Drawing.Size(800, 146);
             this.groupBox1.TabIndex = 52;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thông tin lịch trình";
+            this.groupBox1.Text = "Thông tin tuyến đường";
             // 
             // btnXoa
             // 

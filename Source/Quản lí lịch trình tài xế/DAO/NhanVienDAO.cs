@@ -232,6 +232,18 @@ namespace DAO
             return dt;
         }
 
+        public static DataTable LoadNVTheoKhaNang(long KhoangCach)
+        {
+            SqlConnection con = DataProvider.Connection();
+            string sql = @"Select * From NhanVien Where KhaNangLai >= " + KhoangCach;
+            SqlCommand cmd = new SqlCommand(sql, con);
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            con = DataProvider.Disconnection();
+            return dt;
+        }
+
         public static DataTable LoadToTruong()
         {
             SqlConnection con = DataProvider.Connection();

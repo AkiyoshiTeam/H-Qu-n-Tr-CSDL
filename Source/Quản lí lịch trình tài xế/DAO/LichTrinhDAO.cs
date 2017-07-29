@@ -37,6 +37,31 @@ namespace DAO
             return dt;
         }
 
+        public static DataTable LoadLichTrinh()
+        {
+            SqlConnection con = DataProvider.Connection();
+            DataTable dt = new DataTable();
+            string sql = @"Select L.MaLich,L.Thang,N.MaNV,L.GioDi,L.GioDen,L.NoiDi,L.NoiDen,C.MaChuyen,T.MaTuyen,T.KhoangCach " +
+                          "From ((NhanVien N join LichTrinh L on N.MaNV=L.MaNV) join ChuyenXe C on L.MaChuyen=C.MaChuyen) join TuyenDuong T on C.MaTuyen=T.MaTuyen ";
+            SqlDataAdapter da = new SqlDataAdapter(sql, con);
+            da.Fill(dt);
+            con = DataProvider.Disconnection();
+            return dt;
+        }
+
+        public static DataTable LoadLichTrinhThang(int Thang)
+        {
+            SqlConnection con = DataProvider.Connection();
+            DataTable dt = new DataTable();
+            string sql = @"Select L.MaLich,L.Thang,N.MaNV,L.GioDi,L.GioDen,L.NoiDi,L.NoiDen,C.MaChuyen,T.MaTuyen,T.KhoangCach " +
+                          "From ((NhanVien N join LichTrinh L on N.MaNV=L.MaNV) join ChuyenXe C on L.MaChuyen=C.MaChuyen) join TuyenDuong T on C.MaTuyen=T.MaTuyen " +
+                          "Where L.Thang = " + Thang.ToString();
+            SqlDataAdapter da = new SqlDataAdapter(sql, con);
+            da.Fill(dt);
+            con = DataProvider.Disconnection();
+            return dt;
+        }
+
         public static bool ThemLichTrinh(LichTrinhDTO L)
         {
             try
@@ -93,6 +118,26 @@ namespace DAO
                 cmd.Parameters["@NoiDi"].Value = L.NoiDi;
                 cmd.Parameters["@NoiDen"].Value = L.NoiDen;
                 cmd.Parameters["@MaChuyen"].Value = L.MaChuyen;
+                cmd.ExecuteNonQuery();
+                con.Close();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public static bool XoaLichTrinh(int MaLich)
+        {
+            try
+            {
+                SqlConnection con = DataProvider.Connection();
+                SqlCommand cmd = new SqlCommand("sp_XoaLichTrinh", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@MaLich", SqlDbType.Int);
+
+                cmd.Parameters["@MaLich"].Value = MaLich;
                 cmd.ExecuteNonQuery();
                 con.Close();
                 return true;

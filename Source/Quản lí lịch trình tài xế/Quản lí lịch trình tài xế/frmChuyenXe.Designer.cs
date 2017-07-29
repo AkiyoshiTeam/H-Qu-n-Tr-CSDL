@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChuyenXe));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtHangXe = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cboTuyenDuong = new System.Windows.Forms.ComboBox();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
@@ -44,10 +48,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvDanhSach = new System.Windows.Forms.DataGridView();
             this.btnThoat = new System.Windows.Forms.Button();
-            this.cboTuyenDuong = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtHangXe = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -74,7 +74,42 @@
             this.groupBox1.Size = new System.Drawing.Size(852, 146);
             this.groupBox1.TabIndex = 56;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thông tin lịch trình";
+            this.groupBox1.Text = "Thông tin chuyến xe";
+            // 
+            // txtHangXe
+            // 
+            this.txtHangXe.Location = new System.Drawing.Point(301, 29);
+            this.txtHangXe.MaxLength = 50;
+            this.txtHangXe.Name = "txtHangXe";
+            this.txtHangXe.Size = new System.Drawing.Size(212, 26);
+            this.txtHangXe.TabIndex = 57;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(470, 108);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(43, 19);
+            this.label4.TabIndex = 56;
+            this.label4.Text = "VNĐ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(229, 32);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(66, 19);
+            this.label3.TabIndex = 55;
+            this.label3.Text = "Hãng xe :";
+            // 
+            // cboTuyenDuong
+            // 
+            this.cboTuyenDuong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTuyenDuong.FormattingEnabled = true;
+            this.cboTuyenDuong.Location = new System.Drawing.Point(115, 67);
+            this.cboTuyenDuong.Name = "cboTuyenDuong";
+            this.cboTuyenDuong.Size = new System.Drawing.Size(398, 27);
+            this.cboTuyenDuong.TabIndex = 54;
             // 
             // btnXoa
             // 
@@ -224,41 +259,6 @@
             this.btnThoat.UseVisualStyleBackColor = true;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // cboTuyenDuong
-            // 
-            this.cboTuyenDuong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTuyenDuong.FormattingEnabled = true;
-            this.cboTuyenDuong.Location = new System.Drawing.Point(115, 67);
-            this.cboTuyenDuong.Name = "cboTuyenDuong";
-            this.cboTuyenDuong.Size = new System.Drawing.Size(398, 27);
-            this.cboTuyenDuong.TabIndex = 54;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(229, 32);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 19);
-            this.label3.TabIndex = 55;
-            this.label3.Text = "Hãng xe :";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(470, 108);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 19);
-            this.label4.TabIndex = 56;
-            this.label4.Text = "VNĐ";
-            // 
-            // txtHangXe
-            // 
-            this.txtHangXe.Location = new System.Drawing.Point(301, 29);
-            this.txtHangXe.MaxLength = 50;
-            this.txtHangXe.Name = "txtHangXe";
-            this.txtHangXe.Size = new System.Drawing.Size(212, 26);
-            this.txtHangXe.TabIndex = 57;
-            // 
             // frmChuyenXe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -271,7 +271,7 @@
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmChuyenXe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chuyến xe";

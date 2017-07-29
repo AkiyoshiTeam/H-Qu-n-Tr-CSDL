@@ -78,6 +78,14 @@ as
 	Where MaLich=@MaLich
  end
 go
+-- Xóa lịch trình --
+Create proc sp_XoaLichTrinh
+ @MaLich int
+as
+ begin
+   Delete from LichTrinh where MaLich=@MaLich
+ end
+go
 -- Get ID Nhân viên --
 Create proc sp_GetIDNhanVien
  @MaNV varchar(10) output
@@ -262,6 +270,37 @@ Create proc sp_XoaChuyenXe
 as
  begin
     Delete from ChuyenXe where MaChuyen = @MaChuyen 
+ end
+go
+-- Thêm tổ --
+Create proc sp_ThemTo
+ @NgayLap date
+as
+ begin
+    Insert into Nhom(NgayLap)
+	Values (@NgayLap)
+ end
+go
+-- Cập nhật tổ --
+Create proc sp_CapNhatTo
+ @MaTo int,
+ @NgayLap date,
+ @ToTruong varchar(10)
+as
+ begin
+  if(@ToTruong = 'NULL')
+    Update Nhom set NgayLap=@NgayLap, ToTruong = NULL where MaTo=@MaTo
+  else
+    Update Nhom set NgayLap=@NgayLap, ToTruong = @ToTruong where MaTo=@MaTo
+ end
+go
+-- Xóa tổ --
+Create proc sp_XoaTo
+ @MaTo int
+as
+ begin
+    Update NhanVien set MaTo = NULL where MaTo=@MaTo
+	Delete from Nhom Where MaTo=@MaTo
  end
 go
 --

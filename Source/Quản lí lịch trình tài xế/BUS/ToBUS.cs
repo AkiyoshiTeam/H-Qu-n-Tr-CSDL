@@ -15,5 +15,20 @@ namespace BUS
         {
             return ToDAO.LoadTo();
         }
+
+        public static bool ThemTo(ToDTO T)
+        {
+            return ToDAO.ThemTo(T);
+        }
+
+        public static bool CapNhatTo(ToDTO T)
+        {
+            return ToDAO.CapNhatTo(T);
+        }
+
+        public static bool XoaTo(int MaTo)
+        {
+            return ToDAO.XoaTo(MaTo);
+        }
     }
 }
