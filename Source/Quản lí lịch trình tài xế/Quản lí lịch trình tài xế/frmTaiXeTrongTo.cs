@@ -49,18 +49,16 @@ namespace Quản_lí_lịch_trình_tài_xế
 
             dgvCol = new DataGridViewTextBoxColumn();
             dgvCol.HeaderText = "Họ tên";
-            dgvCol.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            dgvCol.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgvCol.DataPropertyName = "HoTen";
-            dgvCol.Width = 160;
             dgvCol.ReadOnly = true;
             dgvDanhSach.Columns.Add(dgvCol);
 
             dgvCol = new DataGridViewTextBoxColumn();
             dgvCol.HeaderText = "Địa chỉ";
-            dgvCol.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            dgvCol.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgvCol.DataPropertyName = "DiaChi";
             dgvCol.ReadOnly = true;
-            dgvCol.Width = 300;
             dgvDanhSach.Columns.Add(dgvCol);
 
             dgvCol = new DataGridViewTextBoxColumn();

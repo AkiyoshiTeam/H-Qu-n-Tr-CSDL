@@ -116,7 +116,7 @@ namespace Quản_lí_lịch_trình_tài_xế
             dgvCo.ValueMember = "MaNV";
             dgvCo.DataPropertyName = "MaNV";
             dgvCo.ReadOnly = true;
-            dgvCo.Width = 150;
+            dgvCo.Width = 200;
             dgvCo.DisplayStyle = DataGridViewComboBoxDisplayStyle.Nothing;
             dgvLichTrinh.Columns.Add(dgvCo);
 

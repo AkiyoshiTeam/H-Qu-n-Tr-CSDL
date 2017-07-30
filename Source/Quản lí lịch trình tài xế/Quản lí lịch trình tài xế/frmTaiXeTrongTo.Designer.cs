@@ -62,7 +62,7 @@
             this.lbTitle.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitle.Location = new System.Drawing.Point(0, 0);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(929, 57);
+            this.lbTitle.Size = new System.Drawing.Size(1358, 57);
             this.lbTitle.TabIndex = 0;
             this.lbTitle.Text = "THÔNG TIN TÀI XẾ TRONG TỔ";
             this.lbTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -87,9 +87,9 @@
             this.groupBox1.Controls.Add(this.txtDienthoai);
             this.groupBox1.Controls.Add(this.txtUsername);
             this.groupBox1.Controls.Add(this.txtKhanang);
-            this.groupBox1.Location = new System.Drawing.Point(12, 60);
+            this.groupBox1.Location = new System.Drawing.Point(14, 60);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(907, 227);
+            this.groupBox1.Size = new System.Drawing.Size(1334, 152);
             this.groupBox1.TabIndex = 28;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin chi tiết";
@@ -115,7 +115,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(864, 35);
+            this.label7.Location = new System.Drawing.Point(877, 111);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(28, 19);
             this.label7.TabIndex = 24;
@@ -133,7 +133,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 149);
+            this.label4.Location = new System.Drawing.Point(485, 35);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 19);
             this.label4.TabIndex = 6;
@@ -143,7 +143,7 @@
             // 
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThoat.Location = new System.Drawing.Point(403, 183);
+            this.btnThoat.Location = new System.Drawing.Point(1075, 108);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(135, 31);
             this.btnThoat.TabIndex = 22;
@@ -155,7 +155,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(501, 149);
+            this.label5.Location = new System.Drawing.Point(485, 73);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(73, 19);
             this.label5.TabIndex = 7;
@@ -163,7 +163,7 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(594, 109);
+            this.txtPassword.Location = new System.Drawing.Point(1024, 71);
             this.txtPassword.MaxLength = 20;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '●';
@@ -175,7 +175,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(501, 73);
+            this.label8.Location = new System.Drawing.Point(931, 35);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(73, 19);
             this.label8.TabIndex = 10;
@@ -194,7 +194,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(501, 111);
+            this.label9.Location = new System.Drawing.Point(931, 73);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(72, 19);
             this.label9.TabIndex = 11;
@@ -213,7 +213,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(501, 35);
+            this.label10.Location = new System.Drawing.Point(485, 111);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(87, 19);
             this.label10.TabIndex = 12;
@@ -221,11 +221,11 @@
             // 
             // txtCMND
             // 
-            this.txtCMND.Location = new System.Drawing.Point(105, 146);
+            this.txtCMND.Location = new System.Drawing.Point(578, 32);
             this.txtCMND.MaxLength = 12;
             this.txtCMND.Name = "txtCMND";
             this.txtCMND.ReadOnly = true;
-            this.txtCMND.Size = new System.Drawing.Size(356, 26);
+            this.txtCMND.Size = new System.Drawing.Size(327, 26);
             this.txtCMND.TabIndex = 17;
             this.txtCMND.TabStop = false;
             // 
@@ -240,17 +240,17 @@
             // 
             // txtDienthoai
             // 
-            this.txtDienthoai.Location = new System.Drawing.Point(594, 146);
+            this.txtDienthoai.Location = new System.Drawing.Point(578, 70);
             this.txtDienthoai.MaxLength = 11;
             this.txtDienthoai.Name = "txtDienthoai";
             this.txtDienthoai.ReadOnly = true;
-            this.txtDienthoai.Size = new System.Drawing.Size(298, 26);
+            this.txtDienthoai.Size = new System.Drawing.Size(327, 26);
             this.txtDienthoai.TabIndex = 16;
             this.txtDienthoai.TabStop = false;
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(594, 70);
+            this.txtUsername.Location = new System.Drawing.Point(1024, 32);
             this.txtUsername.MaxLength = 50;
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.ReadOnly = true;
@@ -260,19 +260,19 @@
             // 
             // txtKhanang
             // 
-            this.txtKhanang.Location = new System.Drawing.Point(594, 32);
+            this.txtKhanang.Location = new System.Drawing.Point(578, 108);
             this.txtKhanang.Name = "txtKhanang";
             this.txtKhanang.ReadOnly = true;
-            this.txtKhanang.Size = new System.Drawing.Size(264, 26);
+            this.txtKhanang.Size = new System.Drawing.Size(293, 26);
             this.txtKhanang.TabIndex = 15;
             this.txtKhanang.TabStop = false;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dgvDanhSach);
-            this.groupBox2.Location = new System.Drawing.Point(12, 293);
+            this.groupBox2.Location = new System.Drawing.Point(14, 218);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(907, 323);
+            this.groupBox2.Size = new System.Drawing.Size(1334, 463);
             this.groupBox2.TabIndex = 29;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách tài xế trong tổ";
@@ -288,7 +288,7 @@
             this.dgvDanhSach.ReadOnly = true;
             this.dgvDanhSach.RowHeadersVisible = false;
             this.dgvDanhSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDanhSach.Size = new System.Drawing.Size(882, 283);
+            this.dgvDanhSach.Size = new System.Drawing.Size(1314, 424);
             this.dgvDanhSach.TabIndex = 1;
             this.dgvDanhSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSach_CellClick);
             this.dgvDanhSach.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvDanhSach_CellFormatting);
@@ -299,7 +299,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(929, 628);
+            this.ClientSize = new System.Drawing.Size(1358, 693);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lbTitle);
@@ -310,6 +310,7 @@
             this.Name = "frmTaiXeTrongTo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin tài xế trong tổ";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmTaiXeTrongTo_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
