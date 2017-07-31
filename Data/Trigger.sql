@@ -158,7 +158,7 @@ begin
 	end
 end
 go
--- Trong một tháng: mỗi tài xế phải lái ít nhất 10 chuyến và không được quá 20 chuyến
+-- Trong một tháng: mỗi tài xế phải lái không được quá 20 chuyến
 --					T			X			S
 -- LichTrinh		+			-			+(MaNV,Thang)
 create trigger tr6
