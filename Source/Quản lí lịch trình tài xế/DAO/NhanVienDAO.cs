@@ -81,17 +81,17 @@ namespace DAO
 
         public static string LayTinhTrang(string Username)
         {
-            string TinhTrang = "";
             SqlConnection con = DataProvider.Connection();
-            string sql = @"Select T.TenTinhTrang  From NhanVien NV join TinhTrang T on NV.TinhTrang=T.MaTinhTrang Where Username='" + Username + "'";
-            SqlCommand cmd = new SqlCommand(sql, con);
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            foreach (DataRow row in dt.Rows)
-            {
-                TinhTrang = row["TenTinhTrang"].ToString();
-            }
+            SqlCommand cmd = new SqlCommand("sp_LayTinhTrang", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@username", SqlDbType.NVarChar);
+            cmd.Parameters.Add("@tenTT", SqlDbType.NVarChar);
+            cmd.Parameters["@tenTT"].Direction = ParameterDirection.Output;
+            cmd.Parameters["@tenTT"].Size = 50;
+
+            cmd.Parameters["@username"].Value = Username;
+            cmd.ExecuteNonQuery();
+            string TinhTrang = cmd.Parameters["@tenTT"].Value.ToString();
             con = DataProvider.Disconnection();
             return TinhTrang;
         }

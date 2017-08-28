@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C9A48138-9541-4A7C-BE6A-F922659F40DD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Quản_lí_lịch_trình_tài_xế</RootNamespace>
+    <AssemblyName>Quản lí lịch trình tài xế</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>vo-lang-boc-da.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAbout.Designer.cs">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCapNhatNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCapNhatNV.Designer.cs">
+      <DependentUpon>frmCapNhatNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmChuyenXe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChuyenXe.Designer.cs">
+      <DependentUpon>frmChuyenXe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDangNhap.Designer.cs">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLichTrinhTo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLichTrinhTo.Designer.cs">
+      <DependentUpon>frmLichTrinhTo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuanli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuanli.Designer.cs">
+      <DependentUpon>frmQuanli.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuantri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuantri.Designer.cs">
+      <DependentUpon>frmQuantri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTaiXe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTaiXe.Designer.cs">
+      <DependentUpon>frmTaiXe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTaiXeTrongTo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTaiXeTrongTo.Designer.cs">
+      <DependentUpon>frmTaiXeTrongTo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThayDoiPass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThayDoiPass.Designer.cs">
+      <DependentUpon>frmThayDoiPass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThemNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThemNV.Designer.cs">
+      <DependentUpon>frmThemNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTo.Designer.cs">
+      <DependentUpon>frmTo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTuyenDuong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTuyenDuong.Designer.cs">
+      <DependentUpon>frmTuyenDuong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAbout.resx">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCapNhatNV.resx">
+      <DependentUpon>frmCapNhatNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChuyenXe.resx">
+      <DependentUpon>frmChuyenXe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDangNhap.resx">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLichTrinhTo.resx">
+      <DependentUpon>frmLichTrinhTo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuanli.resx">
+      <DependentUpon>frmQuanli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuantri.resx">
+      <DependentUpon>frmQuantri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTaiXe.resx">
+      <DependentUpon>frmTaiXe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTaiXeTrongTo.resx">
+      <DependentUpon>frmTaiXeTrongTo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThayDoiPass.resx">
+      <DependentUpon>frmThayDoiPass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThemNV.resx">
+      <DependentUpon>frmThemNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTo.resx">
+      <DependentUpon>frmTo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTuyenDuong.resx">
+      <DependentUpon>frmTuyenDuong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BUS\BUS.csproj">
+      <Project>{250462e0-aae1-44fc-8319-c93509f0d917}</Project>
+      <Name>BUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{ae9fe71d-f81f-4378-80d8-213241f982c0}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="vo-lang-boc-da.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

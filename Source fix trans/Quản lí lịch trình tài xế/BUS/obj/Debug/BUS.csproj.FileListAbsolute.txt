@@ -1,0 +1,27 @@
+D:\Hệ QTCSDL\Source\Quản lí lịch trình tài xế\BUS\bin\Debug\BUS.dll
+D:\Hệ QTCSDL\Source\Quản lí lịch trình tài xế\BUS\bin\Debug\BUS.pdb
+D:\Hệ QTCSDL\Source\Quản lí lịch trình tài xế\BUS\bin\Debug\DAO.dll
+D:\Hệ QTCSDL\Source\Quản lí lịch trình tài xế\BUS\bin\Debug\DTO.dll
+D:\Hệ QTCSDL\Source\Quản lí lịch trình tài xế\BUS\bin\Debug\DAO.pdb
+D:\Hệ QTCSDL\Source\Quản lí lịch trình tài xế\BUS\bin\Debug\DTO.pdb
+D:\Hệ QTCSDL\Source\Quản lí lịch trình tài xế\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+D:\Hệ QTCSDL\Source\Quản lí lịch trình tài xế\BUS\obj\Debug\BUS.dll
+D:\Hệ QTCSDL\Source\Quản lí lịch trình tài xế\BUS\obj\Debug\BUS.pdb
+D:\Hệ QTCSDL\Source fix trans\Quản lí lịch trình tài xế\BUS\bin\Debug\BUS.dll
+D:\Hệ QTCSDL\Source fix trans\Quản lí lịch trình tài xế\BUS\bin\Debug\BUS.pdb
+D:\Hệ QTCSDL\Source fix trans\Quản lí lịch trình tài xế\BUS\bin\Debug\DAO.dll
+D:\Hệ QTCSDL\Source fix trans\Quản lí lịch trình tài xế\BUS\bin\Debug\DTO.dll
+D:\Hệ QTCSDL\Source fix trans\Quản lí lịch trình tài xế\BUS\bin\Debug\DAO.pdb
+D:\Hệ QTCSDL\Source fix trans\Quản lí lịch trình tài xế\BUS\bin\Debug\DTO.pdb
+D:\Hệ QTCSDL\Source fix trans\Quản lí lịch trình tài xế\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+D:\Hệ QTCSDL\Source fix trans\Quản lí lịch trình tài xế\BUS\obj\Debug\BUS.dll
+D:\Hệ QTCSDL\Source fix trans\Quản lí lịch trình tài xế\BUS\obj\Debug\BUS.pdb
+D:\Source fix trans\Quản lí lịch trình tài xế\BUS\bin\Debug\BUS.dll
+D:\Source fix trans\Quản lí lịch trình tài xế\BUS\bin\Debug\BUS.pdb
+D:\Source fix trans\Quản lí lịch trình tài xế\BUS\bin\Debug\DAO.dll
+D:\Source fix trans\Quản lí lịch trình tài xế\BUS\bin\Debug\DTO.dll
+D:\Source fix trans\Quản lí lịch trình tài xế\BUS\bin\Debug\DAO.pdb
+D:\Source fix trans\Quản lí lịch trình tài xế\BUS\bin\Debug\DTO.pdb
+D:\Source fix trans\Quản lí lịch trình tài xế\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+D:\Source fix trans\Quản lí lịch trình tài xế\BUS\obj\Debug\BUS.dll
+D:\Source fix trans\Quản lí lịch trình tài xế\BUS\obj\Debug\BUS.pdb
