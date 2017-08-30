@@ -17,7 +17,7 @@ namespace DAO
             SqlConnection con = DataProvider.Connection();
             try
             {
-                SqlCommand cmd = new SqlCommand("sp_DangNhap", con);
+                SqlCommand cmd = new SqlCommand("sp_DangNhapfix", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("@Username", SqlDbType.NVarChar);
                 cmd.Parameters.Add("@Password", SqlDbType.VarChar);
@@ -259,7 +259,7 @@ namespace DAO
         public static string GetIDNhanVien()
         {
             SqlConnection con = DataProvider.Connection();
-            SqlCommand cmd = new SqlCommand("sp_GetIDNhanVien", con);
+            SqlCommand cmd = new SqlCommand("sp_GetIDNhanVienFix", con);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add("@MaNV", SqlDbType.VarChar);
             cmd.Parameters["@MaNV"].Direction = ParameterDirection.Output;

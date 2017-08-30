@@ -15,10 +15,11 @@ namespace DAO
         {
             SqlConnection con = DataProvider.Connection();
             DataTable dt = new DataTable();
-            string sql = @"Select L.MaLich,L.Thang,L.GioDi,L.GioDen,L.NoiDi,L.NoiDen,C.HangXe,T.TenTuyen,T.KhoangCach " +
-                          "From ((NhanVien N join LichTrinh L on N.MaNV=L.MaNV) join ChuyenXe C on L.MaChuyen=C.MaChuyen) join TuyenDuong T on C.MaTuyen=T.MaTuyen " +
-                          "Where N.MaNV = '" + MaNV + "'";
-            SqlDataAdapter da = new SqlDataAdapter(sql, con);
+            SqlCommand cmd = new SqlCommand("sp_LichTrinhCN", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@MaNV", SqlDbType.VarChar);
+            cmd.Parameters["@MaNV"].Value = MaNV;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             con = DataProvider.Disconnection();
             return dt;

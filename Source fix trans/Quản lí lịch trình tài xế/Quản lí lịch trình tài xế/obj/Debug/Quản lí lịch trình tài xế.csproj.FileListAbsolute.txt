@@ -79,30 +79,3 @@ D:\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình 
 D:\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản lí lịch trình tài xế.csproj.GenerateResource.Cache
 D:\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản lí lịch trình tài xế.exe
 D:\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản lí lịch trình tài xế.pdb
-C:\Users\mjnht\Desktop\He-Quan-Tri-CSDL\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\bin\Debug\Quản lí lịch trình tài xế.exe.config
-C:\Users\mjnht\Desktop\He-Quan-Tri-CSDL\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\bin\Debug\Quản lí lịch trình tài xế.exe
-C:\Users\mjnht\Desktop\He-Quan-Tri-CSDL\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\bin\Debug\Quản lí lịch trình tài xế.pdb
-C:\Users\mjnht\Desktop\He-Quan-Tri-CSDL\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\bin\Debug\BUS.dll
-C:\Users\mjnht\Desktop\He-Quan-Tri-CSDL\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\bin\Debug\DTO.dll
-C:\Users\mjnht\Desktop\He-Quan-Tri-CSDL\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\bin\Debug\DAO.dll
-C:\Users\mjnht\Desktop\He-Quan-Tri-CSDL\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\bin\Debug\BUS.pdb
-C:\Users\mjnht\Desktop\He-Quan-Tri-CSDL\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\bin\Debug\DTO.pdb
-C:\Users\mjnht\Desktop\He-Quan-Tri-CSDL\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\bin\Debug\DAO.pdb
-C:\Users\mjnht\Desktop\He-Quan-Tri-CSDL\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản lí lịch trình tài xế.csprojResolveAssemblyReference.cache
-C:\Users\mjnht\Desktop\He-Quan-Tri-CSDL\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản_lí_lịch_trình_tài_xế.frmAbout.resources
-C:\Users\mjnht\Desktop\He-Quan-Tri-CSDL\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản_lí_lịch_trình_tài_xế.frmCapNhatNV.resources
-C:\Users\mjnht\Desktop\He-Quan-Tri-CSDL\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản_lí_lịch_trình_tài_xế.frmChuyenXe.resources
-C:\Users\mjnht\Desktop\He-Quan-Tri-CSDL\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản_lí_lịch_trình_tài_xế.frmDangNhap.resources
-C:\Users\mjnht\Desktop\He-Quan-Tri-CSDL\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản_lí_lịch_trình_tài_xế.frmLichTrinhTo.resources
-C:\Users\mjnht\Desktop\He-Quan-Tri-CSDL\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản_lí_lịch_trình_tài_xế.frmQuanli.resources
-C:\Users\mjnht\Desktop\He-Quan-Tri-CSDL\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản_lí_lịch_trình_tài_xế.frmQuantri.resources
-C:\Users\mjnht\Desktop\He-Quan-Tri-CSDL\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản_lí_lịch_trình_tài_xế.frmTaiXe.resources
-C:\Users\mjnht\Desktop\He-Quan-Tri-CSDL\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản_lí_lịch_trình_tài_xế.frmTaiXeTrongTo.resources
-C:\Users\mjnht\Desktop\He-Quan-Tri-CSDL\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản_lí_lịch_trình_tài_xế.frmThayDoiPass.resources
-C:\Users\mjnht\Desktop\He-Quan-Tri-CSDL\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản_lí_lịch_trình_tài_xế.frmThemNV.resources
-C:\Users\mjnht\Desktop\He-Quan-Tri-CSDL\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản_lí_lịch_trình_tài_xế.frmTo.resources
-C:\Users\mjnht\Desktop\He-Quan-Tri-CSDL\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản_lí_lịch_trình_tài_xế.frmTuyenDuong.resources
-C:\Users\mjnht\Desktop\He-Quan-Tri-CSDL\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản_lí_lịch_trình_tài_xế.Properties.Resources.resources
-C:\Users\mjnht\Desktop\He-Quan-Tri-CSDL\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản lí lịch trình tài xế.csproj.GenerateResource.Cache
-C:\Users\mjnht\Desktop\He-Quan-Tri-CSDL\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản lí lịch trình tài xế.exe
-C:\Users\mjnht\Desktop\He-Quan-Tri-CSDL\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản lí lịch trình tài xế.pdb

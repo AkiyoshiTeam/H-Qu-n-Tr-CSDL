@@ -19,10 +19,3 @@ D:\Source fix trans\Quản lí lịch trình tài xế\DAO\bin\Debug\DTO.pdb
 D:\Source fix trans\Quản lí lịch trình tài xế\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
 D:\Source fix trans\Quản lí lịch trình tài xế\DAO\obj\Debug\DAO.dll
 D:\Source fix trans\Quản lí lịch trình tài xế\DAO\obj\Debug\DAO.pdb
-C:\Users\mjnht\Desktop\He-Quan-Tri-CSDL\Source fix trans\Quản lí lịch trình tài xế\DAO\bin\Debug\DAO.dll
-C:\Users\mjnht\Desktop\He-Quan-Tri-CSDL\Source fix trans\Quản lí lịch trình tài xế\DAO\bin\Debug\DAO.pdb
-C:\Users\mjnht\Desktop\He-Quan-Tri-CSDL\Source fix trans\Quản lí lịch trình tài xế\DAO\bin\Debug\DTO.dll
-C:\Users\mjnht\Desktop\He-Quan-Tri-CSDL\Source fix trans\Quản lí lịch trình tài xế\DAO\bin\Debug\DTO.pdb
-C:\Users\mjnht\Desktop\He-Quan-Tri-CSDL\Source fix trans\Quản lí lịch trình tài xế\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
-C:\Users\mjnht\Desktop\He-Quan-Tri-CSDL\Source fix trans\Quản lí lịch trình tài xế\DAO\obj\Debug\DAO.dll
-C:\Users\mjnht\Desktop\He-Quan-Tri-CSDL\Source fix trans\Quản lí lịch trình tài xế\DAO\obj\Debug\DAO.pdb
