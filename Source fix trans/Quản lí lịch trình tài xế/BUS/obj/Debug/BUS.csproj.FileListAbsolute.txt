@@ -25,3 +25,12 @@ D:\Source fix trans\Quản lí lịch trình tài xế\BUS\bin\Debug\DTO.pdb
 D:\Source fix trans\Quản lí lịch trình tài xế\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
 D:\Source fix trans\Quản lí lịch trình tài xế\BUS\obj\Debug\BUS.dll
 D:\Source fix trans\Quản lí lịch trình tài xế\BUS\obj\Debug\BUS.pdb
+C:\Users\mjnht\Desktop\He-Quan-Tri-CSDL\Source fix trans\Quản lí lịch trình tài xế\BUS\bin\Debug\BUS.dll
+C:\Users\mjnht\Desktop\He-Quan-Tri-CSDL\Source fix trans\Quản lí lịch trình tài xế\BUS\bin\Debug\BUS.pdb
+C:\Users\mjnht\Desktop\He-Quan-Tri-CSDL\Source fix trans\Quản lí lịch trình tài xế\BUS\bin\Debug\DAO.dll
+C:\Users\mjnht\Desktop\He-Quan-Tri-CSDL\Source fix trans\Quản lí lịch trình tài xế\BUS\bin\Debug\DTO.dll
+C:\Users\mjnht\Desktop\He-Quan-Tri-CSDL\Source fix trans\Quản lí lịch trình tài xế\BUS\bin\Debug\DAO.pdb
+C:\Users\mjnht\Desktop\He-Quan-Tri-CSDL\Source fix trans\Quản lí lịch trình tài xế\BUS\bin\Debug\DTO.pdb
+C:\Users\mjnht\Desktop\He-Quan-Tri-CSDL\Source fix trans\Quản lí lịch trình tài xế\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+C:\Users\mjnht\Desktop\He-Quan-Tri-CSDL\Source fix trans\Quản lí lịch trình tài xế\BUS\obj\Debug\BUS.dll
+C:\Users\mjnht\Desktop\He-Quan-Tri-CSDL\Source fix trans\Quản lí lịch trình tài xế\BUS\obj\Debug\BUS.pdb
