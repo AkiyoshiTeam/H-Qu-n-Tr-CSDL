@@ -67,7 +67,7 @@ namespace Quản_lí_lịch_trình_tài_xế
             else if (NhanVienBUS.LayTinhTrang(txtUsername.Text) == "Lock")
                 MessageBox.Show("Tài khoản đã bị khóa.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
-                MessageBox.Show("Sai username hoặc mật khẩu.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Tài khoản không tồn tại.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

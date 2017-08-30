@@ -41,7 +41,7 @@ namespace DAO
         public static string GetIDTuyenDuong()
         {
             SqlConnection con = DataProvider.Connection();
-            SqlCommand cmd = new SqlCommand("sp_GetIDTuyenDuong", con);
+            SqlCommand cmd = new SqlCommand("sp_GetIDTuyenDuongFix", con);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add("@MaTuyen", SqlDbType.VarChar);
             cmd.Parameters["@MaTuyen"].Direction = ParameterDirection.Output;

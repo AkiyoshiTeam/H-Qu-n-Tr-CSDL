@@ -263,11 +263,17 @@ Create proc sp_CapNhatNV
  @MaTo int
 as
  begin tran
-    Update  NhanVien 
-	set HoTen =@Hoten, DiaChi=@Diachi, CMND=@CMND, DienThoai=@Dienthoai, KhaNangLai=@Khananglai, Username=@Username, MaPQ=@MaPQ, MaTo=@MaTo
-	where MaNV=@MaNV
-	Waitfor delay '00:00:10'
- Rollback
+   begin try
+     Update  NhanVien 
+	 set HoTen =@Hoten, DiaChi=@Diachi, CMND=@CMND, DienThoai=@Dienthoai, KhaNangLai=@Khananglai, Username=@Username, MaPQ=@MaPQ, MaTo=@MaTo
+	 where MaNV=@MaNV
+	 Waitfor delay '00:00:10'
+     Rollback
+   end try
+   begin catch
+      rollback
+   end catch
+ commit
 go
 -- FIX DIRTY READ --
 Create proc sp_LayTinhTrangfix
@@ -381,6 +387,39 @@ as
 	Values (@MaNV,@Hoten,@Diachi,@CMND,@Dienthoai,@Khananglai,@Username,@Password,@MaPQ,@MaTo,'1')
  commit
 go
+-- Get ID tuyến đường --
+Create proc sp_GetIDTuyenDuong
+ @MaTuyen varchar(10) output
+as
+ begin tran
+   declare @n numeric
+   declare @Z nchar(2),@W nchar(8)
+   set @Z='TD'   
+   if exists (Select top 1 * From TuyenDuong)
+   begin
+       WAITFOR DELAY '00:00:05'
+       Select @n= max(cast(Substring(MaTuyen,3,8) as numeric)) From TuyenDuong
+   end
+   else
+       set @n = 0
+   set @n=@n+1
+   set @W = cast(@n as nchar(8))
+   While len(@W)<5
+      set @W='0'+@W
+   set @MaTuyen = @Z+@W
+ commit
+go
+-- Thêm tuyến đường --
+Create proc sp_ThemTuyenDuong
+ @MaTuyen varchar(10),
+ @TenTuyen nvarchar(50),
+ @KhoangCach bigint
+as
+ begin tran
+    Insert into TuyenDuong(MaTuyen,TenTuyen,KhoangCach)
+	Values (@MaTuyen,@TenTuyen,@KhoangCach)
+ commit
+go
 -- FIX PHANTOM --
 Create proc sp_GetIDNhanVienFix
  @MaNV varchar(10) output
@@ -402,5 +441,27 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
    While len(@W)<5
       set @W='0'+@W
    set @MaNV = @Z+@W
+ commit
+go
+Create proc sp_GetIDTuyenDuongFix
+ @MaTuyen varchar(10) output
+as
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
+ begin tran
+   declare @n numeric
+   declare @Z nchar(2),@W nchar(8)
+   set @Z='TD'   
+   if exists (Select top 1 * From TuyenDuong)
+   begin
+       WAITFOR DELAY '00:00:05'
+       Select @n= max(cast(Substring(MaTuyen,3,8) as numeric)) From TuyenDuong
+   end
+   else
+       set @n = 0
+   set @n=@n+1
+   set @W = cast(@n as nchar(8))
+   While len(@W)<5
+      set @W='0'+@W
+   set @MaTuyen = @Z+@W
  commit
 go
