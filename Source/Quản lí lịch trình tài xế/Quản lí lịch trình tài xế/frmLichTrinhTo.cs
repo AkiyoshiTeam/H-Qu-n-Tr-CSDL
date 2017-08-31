@@ -246,10 +246,6 @@ namespace Quản_lí_lịch_trình_tài_xế
             KhoangCach = TuyenDuongBUS.LayKhoangCach(cboTuyenDuong.SelectedValue.ToString());
             txtKhoangCach.Text = KhoangCach.ToString();
             cboMaNV.Enabled = true;
-            cboMaNV.DataSource = NhanVienBUS.LoadNVTrongToTheoKhaNang(MaTo, KhoangCach);
-            cboMaNV.DisplayMember = "HoTen";
-            cboMaNV.ValueMember = "MaNV";
-
         }
 
         private void btnReset_Click(object sender, EventArgs e)
