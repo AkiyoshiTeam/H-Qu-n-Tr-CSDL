@@ -74,36 +74,6 @@ as
 	where MaNV=@MaNV
  end
 go
--- Get ID tuyến đường --
-Create proc sp_GetIDTuyenDuong
- @MaTuyen varchar(10) output
-as
- begin
-   declare @n numeric
-   declare @Z nchar(2),@W nchar(8)
-   set @Z='TD'   
-   if exists (Select top 1 * From TuyenDuong)
-       Select @n= max(cast(Substring(MaTuyen,3,8) as numeric)) From TuyenDuong
-   else
-       set @n = 0
-   set @n=@n+1
-   set @W = cast(@n as nchar(8))
-   While len(@W)<5
-      set @W='0'+@W
-   set @MaTuyen = @Z+@W
- end
-go
--- Thêm tuyến đường --
-Create proc sp_ThemTuyenDuong
- @MaTuyen varchar(10),
- @TenTuyen nvarchar(50),
- @KhoangCach bigint
-as
- begin
-    Insert into TuyenDuong(MaTuyen,TenTuyen,KhoangCach)
-	Values (@MaTuyen,@TenTuyen,@KhoangCach)
- end
-go
 -- Cập nhật tuyến đường --
 Create proc sp_CapNhatTuyenDuong
  @MaTuyen varchar(10),
@@ -267,10 +237,9 @@ as
      Update  NhanVien 
 	 set HoTen =@Hoten, DiaChi=@Diachi, CMND=@CMND, DienThoai=@Dienthoai, KhaNangLai=@Khananglai, Username=@Username, MaPQ=@MaPQ, MaTo=@MaTo
 	 where MaNV=@MaNV
-	 Waitfor delay '00:00:10'
-     Rollback
    end try
    begin catch
+      Waitfor delay '00:00:10'
       rollback
    end catch
  commit
