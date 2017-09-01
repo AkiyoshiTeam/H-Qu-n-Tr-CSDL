@@ -58,6 +58,14 @@ namespace Quản_lí_lịch_trình_tài_xế
                         this.Show();
                         txtPassword.ResetText();
                     }
+                    else if (NhanVienBUS.LayPQ(txtUsername.Text)=="Khách hàng")
+                    {
+                        frmKhachHang frm = new frmKhachHang();
+                        this.Hide();
+                        frm.ShowDialog();
+                        this.Show();
+                        txtPassword.ResetText();
+                    }
                 }
                 else if (NhanVienBUS.DangNhap(NV) == false)
                 {

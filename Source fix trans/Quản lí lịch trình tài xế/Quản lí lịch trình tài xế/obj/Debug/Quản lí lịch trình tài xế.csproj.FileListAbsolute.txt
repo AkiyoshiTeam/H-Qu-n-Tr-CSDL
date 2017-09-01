@@ -79,3 +79,4 @@ D:\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình 
 D:\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản lí lịch trình tài xế.csproj.GenerateResource.Cache
 D:\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản lí lịch trình tài xế.exe
 D:\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản lí lịch trình tài xế.pdb
+D:\Hệ QTCSDL\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản_lí_lịch_trình_tài_xế.frmKhachHang.resources

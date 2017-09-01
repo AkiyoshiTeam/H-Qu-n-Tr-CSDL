@@ -434,3 +434,28 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
    set @MaTuyen = @Z+@W
  commit
 go
+-- LOST UPDATE --
+-- Đặt vé --
+Create proc sp_DatVe
+ @MaLich int,
+ @SoLuongVeBanDuoc int
+as
+begin tran
+  set @SoLuongVeBanDuoc = @SoLuongVeBanDuoc + 1
+  Update LichTrinh
+  set SoLuongVeBanDuoc = @SoLuongVeBanDuoc
+  Where MaLich = @MaLich
+commit
+go
+-- Hủy vé --
+Create proc sp_HuyVe
+ @MaLich int,
+ @SoLuongVeBanDuoc int
+as
+begin tran
+  set @SoLuongVeBanDuoc = @SoLuongVeBanDuoc - 1
+  Update LichTrinh
+  set SoLuongVeBanDuoc = @SoLuongVeBanDuoc
+  Where MaLich = @MaLich
+commit
+go

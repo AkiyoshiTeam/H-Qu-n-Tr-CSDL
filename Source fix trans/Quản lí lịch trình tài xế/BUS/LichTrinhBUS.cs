@@ -35,7 +35,12 @@ namespace BUS
         {
             return LichTrinhDAO.LoadLichTrinh();
         }
-
+        //
+        public static DataTable LoadLichTrinhTheoTuyen(string MaTuyen)
+        {
+            return LichTrinhDAO.LoadLichTrinhTheoTuyen(MaTuyen);
+        }
+        //
         public static bool XoaLichTrinh(int MaLich)
         {
             return LichTrinhDAO.XoaLichTrinh(MaLich);
