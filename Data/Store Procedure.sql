@@ -515,3 +515,39 @@ IF(NOT EXISTS (SELECT * FROM Lichtrinh with(xlock) WHERE MaLich = @MaLich))
   Where MaLich = @MaLich
 commit
 go
+CREATE 
+PROC sp_ThongKeChuyenXeTheoTuyen
+	@MaTuyen as varchar(45)
+AS
+BEGIN TRAN
+	DECLARE @MaChuyenXe CHAR(10), @TONGSO INT
+	BEGIN TRY
+		DECLARE cur CURSOR DYNAMIC FOR SELECT MaChuyen
+										FROM ChuyenXe 
+										WHERE MaTuyen = @MaTuyen
+		OPEN CUR
+		SET @TONGSO = (SELECT COUNT(DISTINCT MaChuyen)
+						FROM ChuyenXe 
+						WHERE MaTuyen = @MaTuyen)
+		PRINT N'TỔNG SỐ SP: ' + CAST(@TONGSO AS CHAR(3))
+		PRINT N'DANH SÁCH CÁC CHUYẾN XE '
+		PRINT '_________________________________________'
+		FETCH NEXT FROM CUR INTO @MaChuyenXe
+		WHILE (@@FETCH_STATUS = 0)
+		BEGIN
+			PRINT @MaChuyenXe
+			WAITFOR DELAY '0:0:05'
+			FETCH NEXT FROM CUR INTO @MaChuyenXe
+		END
+		CLOSE CUR
+		DEALLOCATE CUR
+	END TRY
+	BEGIN CATCH
+		DECLARE @ErrorMsg VARCHAR(2000)
+		SELECT @ErrorMsg = N'Lỗi: ' + ERROR_MESSAGE()
+		RAISERROR(@ErrorMsg, 16,1)
+		ROLLBACK TRAN
+		RETURN
+	END CATCH
+COMMIT TRAN
+GO
