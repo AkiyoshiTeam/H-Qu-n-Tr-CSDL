@@ -404,18 +404,16 @@ namespace DAO
             }
         }
         //
-        public static bool DatVe(int MaLich, int SLVe)
+        public static bool DatVe(int MaLich)
         {
             try
             {
                 SqlConnection con = DataProvider.Connection();
-                SqlCommand cmd = new SqlCommand("sp_DatVe", con);
+                SqlCommand cmd = new SqlCommand("sp_DatVeFix", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("@MaLich", SqlDbType.Int);
-                cmd.Parameters.Add("@SoLuongVeBanDuoc", SqlDbType.Int);
 
                 cmd.Parameters["@MaLich"].Value = MaLich;
-                cmd.Parameters["@SoLuongVeBanDuoc"].Value = SLVe;
                 cmd.ExecuteNonQuery();
                 con.Close();
                 return true;
@@ -426,18 +424,16 @@ namespace DAO
             }
         }
         // 
-        public static bool HuyVe(int MaLich, int SLVe)
+        public static bool HuyVe(int MaLich)
         {
             try
             {
                 SqlConnection con = DataProvider.Connection();
-                SqlCommand cmd = new SqlCommand("sp_HuyVe", con);
+                SqlCommand cmd = new SqlCommand("sp_HuyVeFix", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("@MaLich", SqlDbType.Int);
-                cmd.Parameters.Add("@SoLuongVeBanDuoc", SqlDbType.Int);
 
                 cmd.Parameters["@MaLich"].Value = MaLich;
-                cmd.Parameters["@SoLuongVeBanDuoc"].Value = SLVe;
                 cmd.ExecuteNonQuery();
                 con.Close();
                 return true;

@@ -134,7 +134,7 @@ namespace Quản_lí_lịch_trình_tài_xế
 
         private void btnDatve_Click(object sender, EventArgs e)
         {
-            if (NhanVienBUS.DatVe(Int32.Parse(dgvLichTrinh.CurrentRow.Cells[0].Value.ToString()), Int32.Parse(dgvLichTrinh.CurrentRow.Cells[10].Value.ToString())) == true)
+            if (NhanVienBUS.DatVe(Int32.Parse(dgvLichTrinh.CurrentRow.Cells[0].Value.ToString())) == true)
             {
                 MessageBox.Show("Đặt vé thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dgvLichTrinh.DataSource = LichTrinhBUS.LoadLichTrinhTheoTuyen(cboTuyenDuong.SelectedValue.ToString());
@@ -147,7 +147,7 @@ namespace Quản_lí_lịch_trình_tài_xế
 
         private void btnHuyve_Click(object sender, EventArgs e)
         {
-            if (NhanVienBUS.HuyVe(Int32.Parse(dgvLichTrinh.CurrentRow.Cells[0].Value.ToString()), Int32.Parse(dgvLichTrinh.CurrentRow.Cells[10].Value.ToString())) == true)
+            if (NhanVienBUS.HuyVe(Int32.Parse(dgvLichTrinh.CurrentRow.Cells[0].Value.ToString())) == true)
             {
                 MessageBox.Show("Hủy vé thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dgvLichTrinh.DataSource = LichTrinhBUS.LoadLichTrinhTheoTuyen(cboTuyenDuong.SelectedValue.ToString());

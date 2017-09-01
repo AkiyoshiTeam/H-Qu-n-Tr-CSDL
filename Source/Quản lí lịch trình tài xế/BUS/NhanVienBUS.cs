@@ -106,14 +106,14 @@ namespace BUS
             return NhanVienDAO.LoadNVTheoKhaNang(KhoangCach);
         }
         //
-        public static bool DatVe(int MaLich, int SLVe)
+        public static bool DatVe(int MaLich)
         {
-            return NhanVienDAO.DatVe(MaLich, SLVe);
+            return NhanVienDAO.DatVe(MaLich);
         }
         //
-        public static bool HuyVe(int MaLich, int SLVe)
+        public static bool HuyVe(int MaLich)
         {
-            return NhanVienDAO.HuyVe(MaLich, SLVe);
+            return NhanVienDAO.HuyVe(MaLich);
         }
     }
 }

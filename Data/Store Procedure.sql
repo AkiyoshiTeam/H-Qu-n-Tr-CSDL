@@ -437,25 +437,81 @@ go
 -- LOST UPDATE --
 -- Đặt vé --
 Create proc sp_DatVe
- @MaLich int,
- @SoLuongVeBanDuoc int
+ @MaLich int
 as
 begin tran
-  set @SoLuongVeBanDuoc = @SoLuongVeBanDuoc + 1
+IF(NOT EXISTS (SELECT *  FROM Lichtrinh WHERE MaLich = @MaLich))
+		BEGIN
+			PRINT @MaLich + N' KHÔNG TỒN TẠI'
+			ROLLBACK TRAN
+			RETURN
+		END
+  declare @SoLuongVeBanDuoc int
+  set @SoLuongVeBanDuoc = (select SoLuongVeBanDuoc from LichTrinh where MaLich = @MaLich)
+  waitfor delay '00:00:05'
   Update LichTrinh
-  set SoLuongVeBanDuoc = @SoLuongVeBanDuoc
+  set SoLuongVeBanDuoc = @SoLuongVeBanDuoc + 1
   Where MaLich = @MaLich
 commit
 go
 -- Hủy vé --
 Create proc sp_HuyVe
- @MaLich int,
- @SoLuongVeBanDuoc int
+ @MaLich int
+as
+begin tran 
+IF(NOT EXISTS (SELECT * FROM Lichtrinh WHERE MaLich = @MaLich))
+		BEGIN
+			PRINT @MaLich + N' KHÔNG TỒN TẠI'
+			ROLLBACK TRAN
+			RETURN
+		END
+  declare @SoLuongVeBanDuoc int
+  set @SoLuongVeBanDuoc = (select SoLuongVeBanDuoc from LichTrinh where MaLich = @MaLich)
+  waitfor delay '00:00:05'
+ 
+  Update LichTrinh
+  set SoLuongVeBanDuoc = @SoLuongVeBanDuoc -1 
+  Where MaLich = @MaLich
+commit
+go
+-- LOST UPDATE FIX --
+Create proc sp_DatVeFix
+ @MaLich int
 as
 begin tran
-  set @SoLuongVeBanDuoc = @SoLuongVeBanDuoc - 1
+set tran isolation level Repeatable read 
+IF(NOT EXISTS (SELECT *  FROM Lichtrinh with(xlock) WHERE MaLich = @MaLich))
+		BEGIN
+			PRINT @MaLich + N' KHÔNG TỒN TẠI'
+			ROLLBACK TRAN
+			RETURN
+		END
+  declare @SoLuongVeBanDuoc int
+  set @SoLuongVeBanDuoc = (select SoLuongVeBanDuoc from LichTrinh where MaLich = @MaLich)
+  waitfor delay '00:00:05'
   Update LichTrinh
-  set SoLuongVeBanDuoc = @SoLuongVeBanDuoc
+  set SoLuongVeBanDuoc = @SoLuongVeBanDuoc + 1
+  Where MaLich = @MaLich
+commit
+go
+-- Hủy vé --
+Create proc sp_HuyVeFix
+ @MaLich int
+as
+begin tran
+set tran isolation level Repeatable read 
+IF(NOT EXISTS (SELECT * FROM Lichtrinh with(xlock) WHERE MaLich = @MaLich))
+		BEGIN
+			PRINT @MaLich + N' KHÔNG TỒN TẠI'
+			ROLLBACK TRAN
+			RETURN
+		END
+  declare @SoLuongVeBanDuoc int
+  set @SoLuongVeBanDuoc = (select SoLuongVeBanDuoc from LichTrinh where MaLich = @MaLich)
+  waitfor delay '00:00:05'
+ 
+  Update LichTrinh
+  set SoLuongVeBanDuoc = @SoLuongVeBanDuoc -1 
   Where MaLich = @MaLich
 commit
 go
