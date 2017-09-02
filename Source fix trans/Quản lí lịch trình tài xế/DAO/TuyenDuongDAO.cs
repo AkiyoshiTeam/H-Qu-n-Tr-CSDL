@@ -81,7 +81,7 @@ namespace DAO
             try
             {
                 SqlConnection con = DataProvider.Connection();
-                SqlCommand cmd = new SqlCommand("sp_CapNhatTuyenDuong", con);
+                SqlCommand cmd = new SqlCommand("sp_CapNhatTuyenDuongFix", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("@MaTuyen", SqlDbType.VarChar);
                 cmd.Parameters.Add("@TenTuyen", SqlDbType.NVarChar);

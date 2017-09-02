@@ -80,3 +80,31 @@ D:\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình 
 D:\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản lí lịch trình tài xế.exe
 D:\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản lí lịch trình tài xế.pdb
 D:\Hệ QTCSDL\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản_lí_lịch_trình_tài_xế.frmKhachHang.resources
+D:\20\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\bin\Debug\Quản lí lịch trình tài xế.exe.config
+D:\20\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\bin\Debug\Quản lí lịch trình tài xế.exe
+D:\20\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\bin\Debug\Quản lí lịch trình tài xế.pdb
+D:\20\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\bin\Debug\BUS.dll
+D:\20\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\bin\Debug\DTO.dll
+D:\20\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\bin\Debug\DAO.dll
+D:\20\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\bin\Debug\BUS.pdb
+D:\20\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\bin\Debug\DTO.pdb
+D:\20\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\bin\Debug\DAO.pdb
+D:\20\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản lí lịch trình tài xế.csprojResolveAssemblyReference.cache
+D:\20\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản_lí_lịch_trình_tài_xế.frmAbout.resources
+D:\20\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản_lí_lịch_trình_tài_xế.frmCapNhatNV.resources
+D:\20\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản_lí_lịch_trình_tài_xế.frmChuyenXe.resources
+D:\20\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản_lí_lịch_trình_tài_xế.frmDangNhap.resources
+D:\20\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản_lí_lịch_trình_tài_xế.frmKhachHang.resources
+D:\20\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản_lí_lịch_trình_tài_xế.frmLichTrinhTo.resources
+D:\20\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản_lí_lịch_trình_tài_xế.frmQuanli.resources
+D:\20\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản_lí_lịch_trình_tài_xế.frmQuantri.resources
+D:\20\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản_lí_lịch_trình_tài_xế.frmTaiXe.resources
+D:\20\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản_lí_lịch_trình_tài_xế.frmTaiXeTrongTo.resources
+D:\20\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản_lí_lịch_trình_tài_xế.frmThayDoiPass.resources
+D:\20\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản_lí_lịch_trình_tài_xế.frmThemNV.resources
+D:\20\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản_lí_lịch_trình_tài_xế.frmTo.resources
+D:\20\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản_lí_lịch_trình_tài_xế.frmTuyenDuong.resources
+D:\20\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản_lí_lịch_trình_tài_xế.Properties.Resources.resources
+D:\20\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản lí lịch trình tài xế.csproj.GenerateResource.Cache
+D:\20\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản lí lịch trình tài xế.exe
+D:\20\Source fix trans\Quản lí lịch trình tài xế\Quản lí lịch trình tài xế\obj\Debug\Quản lí lịch trình tài xế.pdb

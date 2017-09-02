@@ -1,6 +1,6 @@
 ﻿use QLTaiXe
 go
-alter proc sp_CapNhatTuyenDuong
+alter proc sp_CapNhatTuyenDuongFix
  @MaTuyen varchar(10),
  @TenTuyen nvarchar(50),
  @KhoangCach bigint

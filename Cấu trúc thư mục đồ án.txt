@@ -1,0 +1,5 @@
+﻿- Thư mục "Báo cáo": Chứa file Báo cáo.docx
+- Thư mục "Data": Chứa file script Store Procedure, Database và Trigger
+- Thư mục "Lỗi Transaction": Chứa các script tình huống lỗi tranh chấp đồng thời và cách sửa, được phân theo tên người làm.
+- Thư mục "Source": Chứa source code ứng dụng đã cài đặt lỗi tranh chấp đồng thời.
+- Thư mục "Source fix tran": Chứa source code ứng dụng đã sửa lỗi tranh chấp đồng thời.

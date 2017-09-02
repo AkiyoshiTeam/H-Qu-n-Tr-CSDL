@@ -25,3 +25,12 @@ D:\Source fix trans\Quản lí lịch trình tài xế\BUS\bin\Debug\DTO.pdb
 D:\Source fix trans\Quản lí lịch trình tài xế\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
 D:\Source fix trans\Quản lí lịch trình tài xế\BUS\obj\Debug\BUS.dll
 D:\Source fix trans\Quản lí lịch trình tài xế\BUS\obj\Debug\BUS.pdb
+D:\20\Source fix trans\Quản lí lịch trình tài xế\BUS\bin\Debug\BUS.dll
+D:\20\Source fix trans\Quản lí lịch trình tài xế\BUS\bin\Debug\BUS.pdb
+D:\20\Source fix trans\Quản lí lịch trình tài xế\BUS\bin\Debug\DAO.dll
+D:\20\Source fix trans\Quản lí lịch trình tài xế\BUS\bin\Debug\DTO.dll
+D:\20\Source fix trans\Quản lí lịch trình tài xế\BUS\bin\Debug\DAO.pdb
+D:\20\Source fix trans\Quản lí lịch trình tài xế\BUS\bin\Debug\DTO.pdb
+D:\20\Source fix trans\Quản lí lịch trình tài xế\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+D:\20\Source fix trans\Quản lí lịch trình tài xế\BUS\obj\Debug\BUS.dll
+D:\20\Source fix trans\Quản lí lịch trình tài xế\BUS\obj\Debug\BUS.pdb
