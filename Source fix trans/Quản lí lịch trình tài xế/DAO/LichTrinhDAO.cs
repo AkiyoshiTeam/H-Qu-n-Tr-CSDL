@@ -15,7 +15,7 @@ namespace DAO
         {
             SqlConnection con = DataProvider.Connection();
             DataTable dt = new DataTable();
-            SqlCommand cmd = new SqlCommand("sp_LichTrinhCN", con);
+            SqlCommand cmd = new SqlCommand("sp_LichTrinhCNFix", con);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add("@MaNV", SqlDbType.VarChar);
             cmd.Parameters["@MaNV"].Value = MaNV;

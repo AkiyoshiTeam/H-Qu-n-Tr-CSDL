@@ -1,3 +1,5 @@
+﻿use QLTaiXe
+go
 --1 
 alter proc sp_CapNhatTuyenDuong
  @MaTuyen varchar(10),
@@ -8,7 +10,7 @@ as
     begin try
 		IF(NOT EXISTS (SELECT * FROM TuyenDuong WHERE MaTuyen = @MaTuyen))
 		BEGIN
-			PRINT @MaTuyen + N' KH�NG T?N T?I'
+			PRINT @MaTuyen + N' KHÔNG TỒN TẠI'
 			ROLLBACK TRAN
 			RETURN
 		END

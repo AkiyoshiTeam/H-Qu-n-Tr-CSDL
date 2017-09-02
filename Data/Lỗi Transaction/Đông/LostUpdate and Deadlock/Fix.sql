@@ -1,11 +1,13 @@
-alter proc sp_DatVe
+﻿use QLTaiXe
+go
+alter proc sp_DatVeFix
  @MaLich int
 as
 begin tran
 set tran isolation level Repeatable read 
 IF(NOT EXISTS (SELECT *  FROM Lichtrinh with(xlock) WHERE MaLich = @MaLich))
 		BEGIN
-			PRINT @MaLich + N' KH�NG T?N T?I'
+			PRINT @MaLich + N' KHÔNG TỒN TẠI'
 			ROLLBACK TRAN
 			RETURN
 		END

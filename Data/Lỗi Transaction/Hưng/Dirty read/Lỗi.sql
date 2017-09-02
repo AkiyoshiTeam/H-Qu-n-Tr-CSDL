@@ -1,3 +1,5 @@
+﻿Use QLTaiXe
+go
 --1
 alter proc sp_CapNhatLichTrinh
  @MaLich int,
@@ -22,9 +24,7 @@ begin tran
  commit tran
 go
 --2
---CREATE
-ALTER
-PROC sp_LichTrinhCN
+ALTER PROC sp_LichTrinhCN
 	@MaNV nvarchar(100)
 AS
 BEGIN TRAN
@@ -37,7 +37,7 @@ BEGIN TRAN
 	END TRY
 	BEGIN CATCH
 		DECLARE @ERRORMSG NVARCHAR(1000)
-		SET @ERRORMSG = N'L?I : ' + ERROR_MESSAGE()
+		SET @ERRORMSG = N'LỖI : ' + ERROR_MESSAGE()
 		RAISERROR (@ERRORMSG, 16,1)
 		ROLLBACK TRAN
 		RETURN

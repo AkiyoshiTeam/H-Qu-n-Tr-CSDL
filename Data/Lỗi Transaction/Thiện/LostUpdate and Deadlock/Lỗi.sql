@@ -1,3 +1,5 @@
+﻿use QLTaiXe
+go
 ----Lost Update
 alter proc sp_DatVe
  @MaLich int
@@ -5,7 +7,7 @@ as
 begin tran
 IF(NOT EXISTS (SELECT *  FROM Lichtrinh WHERE MaLich = @MaLich))
 		BEGIN
-			PRINT @MaLich + N' KH�NG T?N T?I'
+			PRINT @MaLich + N' KHÔNG TỒN TẠI'
 			ROLLBACK TRAN
 			RETURN
 		END
@@ -17,14 +19,14 @@ IF(NOT EXISTS (SELECT *  FROM Lichtrinh WHERE MaLich = @MaLich))
   Where MaLich = @MaLich
 commit
 go
--- H?y v� --
+-- Hủy vé --
 alter proc sp_HuyVe
  @MaLich int
 as
 begin tran 
 IF(NOT EXISTS (SELECT * FROM Lichtrinh WHERE MaLich = @MaLich))
 		BEGIN
-			PRINT @MaLich + N' KH�NG T?N T?I'
+			PRINT @MaLich + N' KHÔNG TỒN TẠI'
 			ROLLBACK TRAN
 			RETURN
 		END

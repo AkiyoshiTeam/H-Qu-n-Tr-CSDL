@@ -1,6 +1,6 @@
 use QLTaiXe
 go
-Create proc sp_LayTinhTrangfix
+Alter proc sp_LayTinhTrangfix
  @username nvarchar(50),
  @tenTT nvarchar(50) output
 as

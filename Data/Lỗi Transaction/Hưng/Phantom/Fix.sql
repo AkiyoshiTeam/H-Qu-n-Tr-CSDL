@@ -1,5 +1,6 @@
-ALTER
-PROC sp_ThongKeChuyenXeTheoTuyen
+﻿use QLTaiXe
+go
+ALTER PROC sp_ThongKeChuyenXeTheoTuyen
 	@MaTuyen as varchar(45)
 AS
 BEGIN TRAN
@@ -13,8 +14,8 @@ BEGIN TRAN
 		SET @TONGSO = (SELECT COUNT(DISTINCT MaChuyen)
 						FROM ChuyenXe 
 						WHERE MaTuyen = @MaTuyen)
-		PRINT N'T?NG S? SP: ' + CAST(@TONGSO AS CHAR(3))
-		PRINT N'DANH S�CH C�C CHUY?N XE '
+		PRINT N'TỔNG SỐ SP: ' + CAST(@TONGSO AS CHAR(3))
+		PRINT N'DANH SÁCH CÁC CHUYẾN XE '
 		PRINT '_________________________________________'
 		FETCH NEXT FROM CUR INTO @MaChuyenXe
 		WHILE (@@FETCH_STATUS = 0)
@@ -28,7 +29,7 @@ BEGIN TRAN
 	END TRY
 	BEGIN CATCH
 		DECLARE @ErrorMsg VARCHAR(2000)
-		SELECT @ErrorMsg = N'L?i: ' + ERROR_MESSAGE()
+		SELECT @ErrorMsg = N'Lỗi: ' + ERROR_MESSAGE()
 		RAISERROR(@ErrorMsg, 16,1)
 		ROLLBACK TRAN
 		RETURN
