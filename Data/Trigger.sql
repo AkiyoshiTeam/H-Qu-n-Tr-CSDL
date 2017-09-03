@@ -112,7 +112,7 @@ begin
 			where I.KhoangCach > all(
 									Select Min(NV.KhaNangLai)
 									from LichTrinh LT join ChuyenXe CX on  LT.MaChuyen=CX.MaChuyen join NhanVien NV on LT.MaNV=NV.MaNV
-									where CX.MaTuyen='TD00001' )
+									where CX.MaTuyen=I.MaTuyen )
 			)
 	begin
 	raiserror(N'Tài Xế Này Chạy Xe Đường Quá Sức Rồi',16,1)
